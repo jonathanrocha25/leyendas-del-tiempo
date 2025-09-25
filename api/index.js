@@ -38,9 +38,7 @@ app.get("/empleado/:cedula", (req, res) => {
   const item = db[cedula];
 
   const imgUrl = `/images/${cedula}.webp`;
-  const siteOrigin = process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "http://localhost:3000";
+  const siteOrigin = "https://leyendas-del-tiempo.vercel.app";
 
   if (!item) {
     return res.status(200).send(`<!doctype html>
