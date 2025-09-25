@@ -149,7 +149,9 @@ app.get("/validador.json", (req, res) => {
 });
 
 // Página visual (bonita) del validador
-res.status(200).send(`<!doctype html>
+res.status(200);
+res.setHeader("Content-Type", "text/html; charset=utf-8");
+res.end(`<!doctype html>
 <html lang="es">
 <head>
 <meta charset="utf-8" />
