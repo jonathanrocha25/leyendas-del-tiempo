@@ -1,11 +1,12 @@
 {
   "version": 2,
   "builds": [
-    { "src": "api/*.js", "use": "@vercel/node" }
+    { "src": "api/*.js", "use": "@vercel/node" },
+    { "src": "public/**/*", "use": "@vercel/static" }
   ],
   "routes": [
     { "src": "^/api/qr$", "dest": "api/qr.js" },
     { "src": "^/empleado/(.+)$", "dest": "api/index.js" },
-    { "src": "^/$", "dest": "api/index.js" }
+    { "src": "/(.*)", "dest": "/public/$1" }
   ]
 }
