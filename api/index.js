@@ -108,3 +108,8 @@ app.get("/empleado/:cedula", (req, res) => {
 });
 
 export default app;
+
+// 👉 Fallback para la página principal
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "public", "index.html"));
+});
