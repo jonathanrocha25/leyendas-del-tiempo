@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Conversor CSV → JSON | Leyendas del Tiempo</title>
+<style>
+  body { font-family: system-ui, sans-serif; background: #f5f7fa; color: #1e2a3a; padding: 40px; max-width: 600px; margin: auto; }
+  h1 { text-align: center; color: #004B8D; }
+  .box { background: #fff; padding: 30px; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  input[type=file] { display: block; width: 100%; padding: 12px; margin: 16px 0; border: 2px dashed #004B8D; border-radius: 10px; cursor: pointer; }
+  button { background: #004B8D; color: #fff; padding: 12px 20px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; width: 100%; }
+  button:hover { background: #003366; }
+  #result { margin-top: 20px; padding: 12px; background: #f0f4ff; font-size: 14px; border-radius: 8px; display: none; }
+</style>
+</head>
+<body>
+  <h1>Conversor CSV → JSON</h1>
+  <div class="box">
+    <p><strong>Instrucciones:</strong></p>
+    <ol>
+      <li>Exporta tu base desde Excel/Sheets como <strong>CSV (UTF-8)</strong>.</li>
+      <li>Debe tener columnas: <code>cedula,nombre,antiguedad,reconocimiento</code>.</li>
+      <li>Sube el archivo aquí abajo 👇</li>
+    </ol>
+
+    <input type="file" id="fileInput" accept=".csv" />
+    <button id="convertBtn">Convertir y descargar JSON</button>
+
+    <div id="result"></div>
+  </div>
+
+<script>
+document.getElementById("convertBtn").addEventListener("click", async () => {
+  const fileInput = document.getElementById("fileInput");
+  const resultBox = document.getElementById("result");
+  resultBox.style.display = "none";
+
+  if (!fileInput.files.length) {
+    alert("Por favor selecciona un archivo CSV primero.");
+    return;
+  }
+
+  const file = fileInput.files[0];
+  const text = await file.text();
+  const lines = text.trim().split(/\r?\n/);
+  const headers = lines[0].split(",").map(h => h.trim().toLowerCase());
+
+  if (!["cedula","nombre","antiguedad","reconocimiento"].every(h => headers.includes(h))) {
+    alert("El CSV debe tener las columnas: cedula, nombre, antiguedad, reconocimiento");
+    return;
+  }
+
+  const data = {};
+  for (let i = 1; i < lines.length; i++) {
+    const values = lines[i].split(",").map(v => v.trim());
+    const row = {};
+    headers.forEach((h, idx) => row[h] = values[idx] || "");
+    if (!row.cedula) continue;
+    data[row.cedula] = {
+      nombre: row.nombre || "",
+      antiguedad: row.antiguedad || "",
+      reconocimiento: row.reconocimiento || ""
+    };
+  }
+
+  const jsonStr = JSON.stringify(data, null, 2);
+  const blob = new Blob([jsonStr], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "data.json";
+  a.click();
+  URL.revokeObjectURL(url);
+
+  resultBox.style.display = "block";
+  resultBox.innerText = `✅ Conversión completa. Registros: ${Object.keys(data).length}\n\nEl archivo "data.json" se ha descargado.`;
+});
+</script>
+</body>
+</html>

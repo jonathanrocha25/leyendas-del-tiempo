@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leyendas del Tiempo – Buscador</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body class="layout">
+  <header class="header">
+    <img src="/brand/logo-cencosud.webp" alt="Leyendas del Tiempo" class="logo" />
+    <h1 class="title">Busca tu reconocimiento</h1>
+  </header>
+
+  <main class="panel">
+    <form id="search-form" autocomplete="off" class="search">
+      <input id="cedula" inputmode="numeric" pattern="[0-9]*" maxlength="20"
+             placeholder="Ingresa tu número de cédula" aria-label="Cédula" />
+      <button type="submit">Buscar</button>
+    </form>
+    <p class="hint">Ejemplo: 1075674604</p>
+  </main>
+
+  <footer class="footer">
+    <small>© Evento Cencosud – Leyendas del Tiempo</small>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
