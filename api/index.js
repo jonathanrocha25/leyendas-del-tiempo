@@ -141,25 +141,7 @@ app.get("/validador.json", (req, res) => {
 });
 
 // Página visual (bonita) del validador
-app.get("/validador", (req, res) => {
-  const db = getDB();
-  const items = Object.entries(db).map(([cedula, data]) => {
-    const exists = hasImage(cedula);
-    return {
-      cedula,
-      nombre: data?.nombre || "",
-      antiguedad: data?.antiguedad || "",
-      reconocimiento: data?.reconocimiento || "",
-      tieneImagen: exists
-    };
-  });
-
-  const total = items.length;
-  const conImagen = items.filter(i => i.tieneImagen).length;
-  const sinImagen = total - conImagen;
-
-  // HTML con estilos inlined para que sea autónomo
-  res.status(200).send(`<!doctype html>
+res.status(200).send(`<!doctype html>
 <html lang="es">
 <head>
 <meta charset="utf-8" />
@@ -178,10 +160,12 @@ app.get("/validador", (req, res) => {
   .card h3{margin:6px 0 4px 0;font-size:14px;opacity:.9}
   .card .n{font-size:26px;font-weight:800}
   .ok{color:var(--ok)} .bad{color:var(--bad)} .muted{color:var(--muted)}
-  .tools{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0 18px}
+  .tools{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0 18px;align-items:center}
   .input{flex:1;min-width:250px;background:#0a2a52;border:1px solid rgba(255,255,255,.2);color:#fff;padding:12px 14px;border-radius:10px;outline:none}
   .btn{background:#fff;color:#0e2a4a;border:0;padding:12px 16px;border-radius:10px;font-weight:700;cursor:pointer}
   .btn--ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5)}
+  .toggle{background:var(--bad);color:#fff;font-weight:700;padding:12px 16px;border:0;border-radius:10px;cursor:pointer}
+  .toggle.active{background:var(--ok)}
   table{width:100%;border-collapse:separate;border-spacing:0 8px}
   thead th{font-size:12px;text-transform:uppercase;opacity:.8;text-align:left;padding:6px 10px}
   tbody tr{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12)}
@@ -211,6 +195,7 @@ app.get("/validador", (req, res) => {
 
     <div class="tools sticky">
       <input id="q" type="search" class="input" placeholder="Buscar por cédula, nombre o reconocimiento..." />
+      <button id="toggle" class="toggle">👀 Ver solo faltantes</button>
       <a class="btn btn--ghost" href="/">Volver al buscador</a>
       <a class="btn" href="/validador.json" target="_blank" rel="noopener">Ver JSON</a>
     </div>
@@ -230,7 +215,7 @@ app.get("/validador", (req, res) => {
         ${items.map(it => `
           <tr class="${it.tieneImagen ? "row-ok" : "row-bad"}" data-row="${[
             it.cedula, it.nombre, it.antiguedad, it.reconocimiento
-          ].join(" ").toLowerCase()}">
+          ].join(" ").toLowerCase()}" data-hasimg="${it.tieneImagen}">
             <td><strong>${it.cedula}</strong></td>
             <td>${it.nombre || "<span class='small'>—</span>"}</td>
             <td>${it.antiguedad || "<span class='small'>—</span>"}</td>
@@ -252,7 +237,7 @@ app.get("/validador", (req, res) => {
   </div>
 
 <script>
-// Filtro en vivo
+// 🔎 Filtro por texto
 const q = document.getElementById("q");
 const rows = Array.from(document.querySelectorAll("tbody tr"));
 q.addEventListener("input", () => {
@@ -262,10 +247,29 @@ q.addEventListener("input", () => {
     tr.style.display = ok ? "" : "none";
   });
 });
+
+// 👁️‍🗨️ Toggle: mostrar solo faltantes
+const toggleBtn = document.getElementById("toggle");
+let showOnlyMissing = false;
+
+toggleBtn.addEventListener("click", () => {
+  showOnlyMissing = !showOnlyMissing;
+  toggleBtn.classList.toggle("active", showOnlyMissing);
+  toggleBtn.textContent = showOnlyMissing ? "👀 Ver todos" : "👀 Ver solo faltantes";
+
+  rows.forEach(tr => {
+    const hasImg = tr.getAttribute("data-hasimg") === "true";
+    if (showOnlyMissing && hasImg) {
+      tr.style.display = "none";
+    } else {
+      const textMatch = tr.getAttribute("data-row").includes(q.value.trim().toLowerCase());
+      tr.style.display = textMatch ? "" : "none";
+    }
+  });
+});
 </script>
 </body>
 </html>`);
-});
 
 
 export default app;
