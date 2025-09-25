@@ -8,6 +8,8 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
+app.use(express.static(path.join(__dirname, "..", "public")));
+
 const DATA_PATH = path.join(__dirname, "..", "src", "data.json");
 function getDB() {
   try { return JSON.parse(fs.readFileSync(DATA_PATH, "utf8")); }
