@@ -116,6 +116,14 @@ function hasImage(cedula) {
   try { return fs.existsSync(imgPath); } catch { return false; }
 }
 
+process.on("uncaughtException", err => {
+  console.error("❌ Error no capturado:", err);
+});
+process.on("unhandledRejection", err => {
+  console.error("❌ Promesa no manejada:", err);
+});
+
+
 // API JSON (útil si quieres consumir los datos desde otra página o script)
 app.get("/validador.json", (req, res) => {
   const db = getDB();
