@@ -28,21 +28,25 @@ export default async function handler(req, res) {
 
   const HASH = "attendance";
 
-  // ✅ Cargar data.json desde /public/data.json
-  let db = {};
-  try {
-    const siteOrigin = process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : "http://localhost:3000";
+// ✅ Cargar data.json directamente desde la carpeta public/
+let db = {};
+try {
+  const fs = await import("fs");
+  const path = await import("path");
+  const { fileURLToPath } = await import("url");
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = path.dirname(__filename);
 
-    const resp = await fetch(`${siteOrigin}/data.json`);
-    if (!resp.ok) throw new Error(`No se pudo obtener data.json (${resp.status})`);
-    db = await resp.json();
-    console.log("📁 data.json cargado correctamente. Total registros:", Object.keys(db).length);
-  } catch (e) {
-    console.error("❌ Error leyendo data.json:", e.message);
-    return res.status(500).json({ ok: false, error: "No se pudo leer data.json" });
-  }
+  // Esto apunta al archivo en /public/data.json
+  const DATA_PATH = path.join(__dirname, "..", "public", "data.json");
+  db = JSON.parse(fs.readFileSync(DATA_PATH, "utf8"));
+
+  console.log("📁 data.json cargado correctamente. Total registros:", Object.keys(db).length);
+} catch (e) {
+  console.error("❌ Error leyendo data.json:", e.message);
+  return res.status(500).json({ ok: false, error: "No se pudo leer data.json" });
+}
+
 
   // ✅ Registrar asistencia
   if (req.method === "POST") {
