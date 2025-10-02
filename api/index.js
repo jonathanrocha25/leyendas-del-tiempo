@@ -61,7 +61,7 @@ app.get("/empleado/:cedula", (req, res) => {
 </html>`);
   }
 
-  const clase = recognitionClass(item.reconocimiento || "");
+  const clase = recognitionClass(item.cargo || "");
   const qrTarget = `${siteOrigin}/empleado/${cedula}`;
 
   res.status(200).send(`<!doctype html>
@@ -78,7 +78,7 @@ app.get("/empleado/:cedula", (req, res) => {
     <div class="frame ${clase}">
       <div class="frame__header">
         <img src="/brand/logo-cencosud.webp" alt="Leyendas del Tiempo" class="frame__logo" />
-        <h2 class="frame__title">Reconocimiento</h2>
+        <h2 class="frame__title">Cargo</h2>
       </div>
 
       <div class="photo">
