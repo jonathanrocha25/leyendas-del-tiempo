@@ -1,49 +1,61 @@
 // api/asistencia.js
 export default async function handler(req, res) {
-  const url = process.env.KV_REST_API_URL;
-  const token = process.env.KV_REST_API_TOKEN;
+  const url = process.env.KV_REST_API_URL;          // p.ej. https://tolerant-seahorse-17195.upstash.io
+  const token = process.env.KV_REST_API_TOKEN;      // token DE ESCRITURA (no el read-only)
+
   if (!url || !token) {
     res.status(500).json({ ok: false, error: "KV no configurado (variables de entorno faltantes)" });
     return;
   }
 
-  // Helpers para hablar con KV (Hash "attendance")
-  async function kv(cmd, ...args) {
-    const body = { cmd, args };
-    const r = await fetch(url, {
-      method: "POST",
-      headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
-      body: JSON.stringify(body),
+  // Helpers REST Upstash (forma oficial)
+  async function redisGET(path) {
+    const r = await fetch(`${url}/${path}`, {
+      headers: { Authorization: `Bearer ${token}` },
     });
-    if (!r.ok) throw new Error(`KV error: ${r.status} ${await r.text()}`);
-    return r.json();
+    const j = await r.json();
+    if (j.error) throw new Error(j.error);
+    return j.result;
   }
-  const HSET = (...a) => kv("HSET", "attendance", ...a);
-  const HGET = (field) => kv("HGET", "attendance", field);
-  const HGETALL = () => kv("HGETALL", "attendance"); // devuelve [field, value, field, value, ...]
+  async function redisPOST(path, body) {
+    const r = await fetch(`${url}/${path}`, {
+      method: "POST",
+      headers: { Authorization: `Bearer ${token}` },
+      // En Upstash, el body se añade como último argumento del comando.
+      body: typeof body === "string" ? body : JSON.stringify(body),
+    });
+    const j = await r.json();
+    if (j.error) throw new Error(j.error);
+    return j.result;
+  }
 
-  // Lee data.json (para mostrar nombre/cargo/antigüedad al registrar)
+  // Hash donde guardamos todo
+  const HASH = "attendance";
+
+  // Node utils para leer data.json
   const fs = await import("fs");
   const path = await import("path");
   const { fileURLToPath } = await import("url");
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = path.dirname(__filename);
   const DATA_PATH = path.join(__dirname, "..", "src", "data.json");
+
   function getDB() {
-    try { return JSON.parse(fs.readFileSync(DATA_PATH, "utf8")); } catch { return {}; }
+    try { return JSON.parse(fs.readFileSync(DATA_PATH, "utf8")); }
+    catch { return {}; }
   }
 
-  // --- Rutas ---
+  // ---- Rutas ----
+
   // POST /api/asistencia  { cedula, pin }
-  if (req.method === "POST") {
+  if (req.method === "POST" && req.url === "/api/asistencia") {
     try {
-      let body = "";
+      let raw = "";
       await new Promise((resolve) => {
-        req.on("data", (c) => (body += c));
+        req.on("data", (c) => (raw += c));
         req.on("end", resolve);
       });
-      const payload = JSON.parse(body || "{}");
-      const { cedula, pin } = payload;
+      const { cedula, pin } = JSON.parse(raw || "{}");
 
       if (pin !== "0808") return res.status(401).json({ ok: false, error: "PIN inválido" });
       if (!/^\d{5,}$/.test(String(cedula || ""))) return res.status(400).json({ ok: false, error: "Cédula inválida" });
@@ -52,10 +64,10 @@ export default async function handler(req, res) {
       const item = db[cedula];
       if (!item) return res.status(404).json({ ok: false, error: "Cédula no encontrada en data.json" });
 
-      // Si ya existe, no duplicamos (idempotente)
-      const existente = await HGET(cedula);
-      if (existente?.result) {
-        return res.json({ ok: true, yaRegistrado: true, data: JSON.parse(existente.result) });
+      // ¿Ya existe?
+      const existente = await redisGET(`hget/${HASH}/${cedula}`);
+      if (existente) {
+        return res.json({ ok: true, yaRegistrado: true, data: JSON.parse(existente) });
       }
 
       const record = {
@@ -66,8 +78,8 @@ export default async function handler(req, res) {
         hora: new Date().toISOString(),
       };
 
-      const r = await HSET(cedula, JSON.stringify(record));
-      if (r.error) throw new Error(r.error);
+      // HSET attendance <cedula> <JSON>
+      await redisPOST(`hset/${HASH}/${cedula}`, JSON.stringify(record));
 
       res.json({ ok: true, data: record });
     } catch (e) {
@@ -76,17 +88,20 @@ export default async function handler(req, res) {
     return;
   }
 
-  // GET /api/asistencia/list?pin=0808 → JSON con asistentes (hash completo)
-  if (req.method === "GET" && req.url.includes("/list")) {
+  // GET /api/asistencia/list?pin=0808
+  if (req.method === "GET" && req.url.startsWith("/api/asistencia/list")) {
     const urlObj = new URL(req.url, `http://${req.headers.host}`);
     const pin = urlObj.searchParams.get("pin");
     if (pin !== "0808") return res.status(401).json({ ok: false, error: "PIN inválido" });
+
     try {
-      const all = await HGETALL();
-      const arr = all?.result || [];
+      // HGETALL attendance -> devuelve array [field, value, field, value ...]
+      const arr = await redisGET(`hgetall/${HASH}`) || [];
       const map = {};
       for (let i = 0; i < arr.length; i += 2) {
-        map[arr[i]] = JSON.parse(arr[i + 1]);
+        const cedula = arr[i];
+        const val = arr[i + 1];
+        map[cedula] = JSON.parse(val);
       }
       res.json({ ok: true, items: map });
     } catch (e) {
@@ -95,20 +110,19 @@ export default async function handler(req, res) {
     return;
   }
 
-  // GET /api/asistencia/export?pin=0808 → CSV (solo asistentes)
-  if (req.method === "GET" && req.url.includes("/export")) {
+  // GET /api/asistencia/export?pin=0808 -> CSV
+  if (req.method === "GET" && req.url.startsWith("/api/asistencia/export")) {
     const urlObj = new URL(req.url, `http://${req.headers.host}`);
     const pin = urlObj.searchParams.get("pin");
     if (pin !== "0808") return res.status(401).send("PIN inválido");
 
     try {
-      const all = await HGETALL();
-      const arr = all?.result || [];
+      const arr = await redisGET(`hgetall/${HASH}`) || [];
       const rows = [["cedula","nombre","cargo","antiguedad","hora"]];
       for (let i = 0; i < arr.length; i += 2) {
         const cedula = arr[i];
         const obj = JSON.parse(arr[i+1]);
-        rows.push([cedula, obj.nombre || "", obj.cargo || "", obj.antiguedad || "", obj.hora || ""]);
+        rows.push([cedula, obj.nombre||"", obj.cargo||"", obj.antiguedad||"", obj.hora||""]);
       }
       const csv = rows.map(r => r.map(v => `"${String(v).replace(/"/g,'""')}"`).join(",")).join("\n");
       res.setHeader("Content-Type", "text/csv; charset=utf-8");
@@ -122,4 +136,3 @@ export default async function handler(req, res) {
 
   res.status(404).json({ ok: false, error: "Ruta no encontrada" });
 }
-
