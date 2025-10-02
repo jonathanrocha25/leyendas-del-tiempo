@@ -36,7 +36,7 @@ export default async function handler(req, res) {
     const { fileURLToPath } = await import("url");
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = path.dirname(__filename);
-    const DATA_PATH = path.join(__dirname, "..", "src", "data.json");
+    const DATA_PATH = path.join(__dirname, "..", "data", "data.json");
     db = JSON.parse(fs.readFileSync(DATA_PATH, "utf8"));
     console.log("📁 data.json cargado correctamente. Total registros:", Object.keys(db).length);
   } catch (e) {
