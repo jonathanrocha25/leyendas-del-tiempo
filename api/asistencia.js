@@ -89,7 +89,7 @@ export default async function handler(req, res) {
   }
 
   // GET /api/asistencia/list?pin=0808
-  if (req.method === "GET" && req.url.startsWith("/api/asistencia/list")) {
+  if (req.method === "GET" && req.url.includes("/list")) {
     const urlObj = new URL(req.url, `http://${req.headers.host}`);
     const pin = urlObj.searchParams.get("pin");
     if (pin !== "0808") return res.status(401).json({ ok: false, error: "PIN inválido" });
@@ -111,7 +111,7 @@ export default async function handler(req, res) {
   }
 
   // GET /api/asistencia/export?pin=0808 -> CSV
-  if (req.method === "GET" && req.url.startsWith("/api/asistencia/export")) {
+  if (req.method === "GET" && req.url.includes("/export")) {
     const urlObj = new URL(req.url, `http://${req.headers.host}`);
     const pin = urlObj.searchParams.get("pin");
     if (pin !== "0808") return res.status(401).send("PIN inválido");
