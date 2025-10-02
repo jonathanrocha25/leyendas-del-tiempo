@@ -28,16 +28,16 @@ export default async function handler(req, res) {
 
   const HASH = "attendance";
 
-  // Cargar data.json
+  // ✅ Cargar data.json desde /public/data.json
   let db = {};
   try {
-    const fs = await import("fs");
-    const path = await import("path");
-    const { fileURLToPath } = await import("url");
-    const __filename = fileURLToPath(import.meta.url);
-    const __dirname = path.dirname(__filename);
-    const db = await fetch(`${process.env.VERCEL_URL ? "https://" + process.env.VERCEL_URL : "http://localhost:3000"}/data.json`).then(r => r.json());
-    db = JSON.parse(fs.readFileSync(DATA_PATH, "utf8"));
+    const siteOrigin = process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : "http://localhost:3000";
+
+    const resp = await fetch(`${siteOrigin}/data.json`);
+    if (!resp.ok) throw new Error(`No se pudo obtener data.json (${resp.status})`);
+    db = await resp.json();
     console.log("📁 data.json cargado correctamente. Total registros:", Object.keys(db).length);
   } catch (e) {
     console.error("❌ Error leyendo data.json:", e.message);
