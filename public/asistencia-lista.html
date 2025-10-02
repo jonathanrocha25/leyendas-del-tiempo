@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lista de Asistencia (Staff)</title>
+<link rel="stylesheet" href="/style.css" />
+<style>
+  .wrap{max-width:1100px;margin:0 auto;padding:20px}
+  .row{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+  table{width:100%;border-collapse:separate;border-spacing:0 8px}
+  thead th{font-size:12px;text-transform:uppercase;opacity:.8;text-align:left;padding:6px 10px}
+  tbody tr{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12)}
+  td{padding:10px}
+  .badge{display:inline-flex;align-items:center;gap:6px;padding:4px 8px;border-radius:999px;font-weight:700;background:rgba(22,163,74,.15);color:#16a34a;border:1px solid rgba(22,163,74,.35)}
+</style>
+</head>
+<body class="layout">
+<header class="header">
+  <img src="/brand/logo-cencosud.webp" class="logo" alt="Cencosud" />
+  <h1 class="title">Lista de Asistencia</h1>
+</header>
+
+<main class="wrap">
+  <div class="row">
+    <input id="pin" type="password" placeholder="PIN (0808)" class="input" />
+    <button id="load" class="btn">🔓 Ver lista</button>
+    <a id="csv" class="btn btn--ghost" href="#" style="display:none">📥 Exportar CSV</a>
+  </div>
+
+  <table>
+    <thead><tr>
+      <th>Cédula</th><th>Nombre</th><th>Cargo</th><th>Antigüedad</th><th>Hora</th><th>Estado</th>
+    </tr></thead>
+    <tbody id="body"></tbody>
+  </table>
+</main>
+
+<script>
+const $ = (s)=>document.querySelector(s);
+
+$("#load").addEventListener("click", async ()=>{
+  const pin = $("#pin").value.trim();
+  if (!pin) return alert("PIN requerido");
+  const r = await fetch(`/api/asistencia/list?pin=${encodeURIComponent(pin)}`);
+  const j = await r.json();
+  if (!j.ok) return alert(j.error || "Error");
+
+  const items = Object.values(j.items || {}).sort((a,b)=>a.nombre.localeCompare(b.nombre));
+  $("#body").innerHTML = items.map(it => `
+    <tr>
+      <td><strong>${it.cedula}</strong></td>
+      <td>${it.nombre||"—"}</td>
+      <td>${it.cargo||"—"}</td>
+      <td>${it.antiguedad||"—"}</td>
+      <td><small>${it.hora||"—"}</small></td>
+      <td><span class="badge">Asistió</span></td>
+    </tr>
+  `).join("");
+
+  $("#csv").style.display = "inline-flex";
+  $("#csv").href = `/api/asistencia/export?pin=${encodeURIComponent(pin)}`;
+});
+</script>
+</body>
+</html>
