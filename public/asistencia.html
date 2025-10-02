@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Registro de Asistencia</title>
+<link rel="stylesheet" href="/style.css" />
+<style>
+  .card {background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:20px;max-width:640px;margin:24px auto}
+  .row{display:grid;gap:8px}
+  .pin{display:flex;gap:10px;margin-top:10px}
+  .msg{margin-top:12px}
+</style>
+</head>
+<body class="layout">
+  <header class="header">
+    <img src="/brand/logo-cencosud.webp" class="logo" alt="Cencosud" />
+    <h1 class="title">Registro de Asistencia</h1>
+  </header>
+
+  <main class="card">
+    <form id="f" class="row" autocomplete="off">
+      <label>Cédula</label>
+      <input id="cedula" inputmode="numeric" pattern="[0-9]*" maxlength="20" placeholder="Ingresa cédula" />
+      <label>PIN (staff)</label>
+      <input id="pin" type="password" inputmode="numeric" placeholder="0808" />
+      <button type="submit" class="btn">✅ Marcar asistencia</button>
+    </form>
+
+    <div id="info" class="msg"></div>
+  </main>
+
+  <footer class="footer">
+    <a class="btn btn--ghost" href="/">Volver</a>
+    <a class="btn" href="/asistencia-lista.html">Ver lista (PIN)</a>
+  </footer>
+
+<script>
+const $ = (s)=>document.querySelector(s);
+$("#f").addEventListener("submit", async (e)=>{
+  e.preventDefault();
+  const cedula = $("#cedula").value.trim();
+  const pin = $("#pin").value.trim();
+  if (!/^\d{5,}$/.test(cedula)) return alert("Cédula inválida");
+  if (!pin) return alert("PIN requerido (staff)");
+
+  const r = await fetch("/api/asistencia", {
+    method:"POST",
+    headers: {"Content-Type":"application/json"},
+    body: JSON.stringify({ cedula, pin })
+  });
+  const j = await r.json();
+  if (!j.ok) {
+    $("#info").innerHTML = `<span style="color:#ffb4b4">❌ ${j.error||"Error"}</span>`;
+    return;
+  }
+  const d = j.data;
+  $("#info").innerHTML = j.yaRegistrado
+    ? `ℹ️ Ya estaba registrado: <strong>${d.nombre}</strong> (${d.cedula}) <br><small>${d.hora}</small>`
+    : `✅ Asistencia marcada: <strong>${d.nombre}</strong> (${d.cedula}) <br><small>${d.hora}</small>`;
+});
+</script>
+</body>
+</html>
