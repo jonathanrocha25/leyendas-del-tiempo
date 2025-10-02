@@ -88,7 +88,7 @@ app.get("/empleado/:cedula", (req, res) => {
       <div class="info">
         <div><strong>${item.nombre}</strong></div>
         <div>Antigüedad: ${item.antiguedad || "—"}</div>
-        <div>${item.reconocimiento || ""}</div>
+        <div>${item.cargo || ""}</div>
       </div>
 
       <div class="ribbon"></div>
