@@ -124,7 +124,7 @@ app.get("/validador", (req, res) => {
       cedula,
       nombre: data?.nombre || "",
       antiguedad: data?.antiguedad || "",
-      reconocimiento: data?.reconocimiento || "",
+      cargo: data?.cargo || "",
       tieneImagen: exists
     };
   });
@@ -137,12 +137,12 @@ app.get("/validador", (req, res) => {
     .map(
       it => `
       <tr class="${it.tieneImagen ? "row-ok" : "row-bad"}" 
-          data-row="${[it.cedula, it.nombre, it.antiguedad, it.reconocimiento].join(" ").toLowerCase()}" 
+          data-row="${[it.cedula, it.nombre, it.antiguedad, it.cargo].join(" ").toLowerCase()}" 
           data-hasimg="${it.tieneImagen}">
         <td><strong>${it.cedula}</strong></td>
         <td>${it.nombre || "<span class='small'>—</span>"}</td>
         <td>${it.antiguedad || "<span class='small'>—</span>"}</td>
-        <td>${it.reconocimiento || "<span class='small'>—</span>"}</td>
+        <td>${it.cargo || "<span class='small'>—</span>"}</td>
         <td>${it.tieneImagen ? `<span class="badge ok">✅ Con imagen</span>` : `<span class="badge bad">❌ Falta imagen</span>`}</td>
         <td class="right">
           <a class="btn btn--ghost" href="/empleado/${it.cedula}" target="_blank">Ver tarjeta</a>
