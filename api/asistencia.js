@@ -48,7 +48,7 @@ export default async function handler(req, res) {
   // ---- Rutas ----
 
   // POST /api/asistencia  { cedula, pin }
-  if (req.method === "POST") {
+  if (req.method === "POST" && req.url.startsWith("/")) {
     try {
       let raw = "";
       await new Promise((resolve) => {
