@@ -111,7 +111,7 @@ async function cargarAsistencia(showToastMessage = false) {
 
     const items = j.items || {};
     const keys = Object.keys(items);
-    counter.textContent = keys.length; // ✅ Actualiza contador en tiempo real
+    counter.textContent = keys.length;
 
     if (keys.length === 0) {
       tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;">📭 Aún no hay registros</td></tr>`;
@@ -173,9 +173,7 @@ document.getElementById("clearAll").addEventListener("click", async () => {
 
 document.getElementById("refresh").addEventListener("click", () => cargarAsistencia(true));
 
-// 🔄 Refresco automático cada 5 s
-setInterval(() => cargarAsistencia(), 5000);
-
+// 🚀 Cargar lista solo al abrir
 window.addEventListener("DOMContentLoaded", cargarAsistencia);
 </script>
 </body>
