@@ -28,15 +28,16 @@ export default async function handler(req, res) {
     if (j.error) throw new Error(j.error);
     return j.result;
   }
-  async function redisDEL(path) {
-    const r = await fetch(`${url}/${path}`, {
-      method: "DELETE",
-      headers: { Authorization: `Bearer ${token}` }
-    });
-    const j = await r.json();
-    if (j.error) throw new Error(j.error);
-    return j.result;
-  }
+  async function redisDEL(path, method = "POST") {
+  const r = await fetch(`${url}/${path}`, {
+    method: method,
+    headers: { Authorization: `Bearer ${token}` }
+  });
+  const j = await r.json();
+  if (j.error) throw new Error(j.error);
+  return j.result;
+}
+
 
   const HASH = "attendance";
 
@@ -108,28 +109,32 @@ export default async function handler(req, res) {
   }
 
   // 🗑️ Eliminar TODOS los registros
-  if (req.method === "DELETE" && req.url.includes("clear")) {
-    try {
-      await redisDEL(`del/${HASH}`);
-      return res.json({ ok: true, cleared: true });
-    } catch (e) {
-      return res.status(500).json({ ok: false, error: e.message });
-    }
+if (req.method === "DELETE" && req.url.includes("clear")) {
+  try {
+    await redisDEL(`del/${HASH}`, "POST"); // 👈 usar POST
+    return res.json({ ok: true, cleared: true });
+  } catch (e) {
+    console.error("❌ Error eliminando todos los registros:", e.message);
+    return res.status(500).json({ ok: false, error: e.message });
   }
+}
+
 
   // 🗑️ Eliminar un registro específico
-  if (req.method === "DELETE" && req.url.includes("cedula=")) {
-    try {
-      const query = new URL(req.url, `http://${req.headers.host}`);
-      const cedula = query.searchParams.get("cedula");
-      if (!cedula) return res.status(400).json({ ok: false, error: "Cédula requerida" });
+if (req.method === "DELETE" && req.url.includes("cedula=")) {
+  try {
+    const query = new URL(req.url, `http://${req.headers.host}`);
+    const cedula = query.searchParams.get("cedula");
+    if (!cedula) return res.status(400).json({ ok: false, error: "Cédula requerida" });
 
-      await redisDEL(`hdel/${HASH}/${cedula}`);
-      return res.json({ ok: true, deleted: cedula });
-    } catch (e) {
-      return res.status(500).json({ ok: false, error: e.message });
-    }
+    await redisDEL(`hdel/${HASH}/${cedula}`, "POST"); // 👈 usar POST en lugar de DELETE
+    return res.json({ ok: true, deleted: cedula });
+  } catch (e) {
+    console.error("❌ Error eliminando asistencia:", e.message);
+    return res.status(500).json({ ok: false, error: e.message });
   }
+}
+
 
   return res.status(404).json({ ok: false, error: "Ruta no encontrada" });
 }
