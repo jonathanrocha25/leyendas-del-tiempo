@@ -3,64 +3,114 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Lista de Asistencia (Staff)</title>
+<title>Lista de Asistencia</title>
 <link rel="stylesheet" href="/style.css" />
 <style>
-  .wrap{max-width:1100px;margin:0 auto;padding:20px}
-  .row{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
-  table{width:100%;border-collapse:separate;border-spacing:0 8px}
-  thead th{font-size:12px;text-transform:uppercase;opacity:.8;text-align:left;padding:6px 10px}
-  tbody tr{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12)}
-  td{padding:10px}
-  .badge{display:inline-flex;align-items:center;gap:6px;padding:4px 8px;border-radius:999px;font-weight:700;background:rgba(22,163,74,.15);color:#16a34a;border:1px solid rgba(22,163,74,.35)}
+  .card {
+    background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 16px;
+    padding: 20px;
+    max-width: 900px;
+    margin: 24px auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+  }
+  th, td {
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(255,255,255,.15);
+    text-align: left;
+  }
+  th {
+    background: rgba(255,255,255,.08);
+    font-weight: bold;
+  }
+  tr:hover { background: rgba(255,255,255,.05); }
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
 </style>
 </head>
 <body class="layout">
-<header class="header">
-  <img src="/brand/logo-cencosud.webp" class="logo" alt="Cencosud" />
-  <h1 class="title">Lista de Asistencia</h1>
-</header>
+  <header class="header">
+    <img src="/brand/logo-cencosud.webp" class="logo" alt="Cencosud" />
+    <h1 class="title">Lista de Asistencia</h1>
+  </header>
 
-<main class="wrap">
-  <div class="row">
-    <input id="pin" type="password" placeholder="PIN (0808)" class="input" />
-    <button id="load" class="btn">🔓 Ver lista</button>
-    <a id="csv" class="btn btn--ghost" href="#" style="display:none">📥 Exportar CSV</a>
-  </div>
+  <main class="card">
+    <div class="actions">
+      <button id="refresh" class="btn">🔄 Actualizar lista</button>
+      <a href="/api/asistencia.js?export" class="btn">📥 Descargar CSV</a>
+    </div>
 
-  <table>
-    <thead><tr>
-      <th>Cédula</th><th>Nombre</th><th>Cargo</th><th>Antigüedad</th><th>Hora</th><th>Estado</th>
-    </tr></thead>
-    <tbody id="body"></tbody>
-  </table>
-</main>
+    <div id="total" style="margin:12px 0;font-weight:bold;"></div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Cédula</th>
+          <th>Nombre</th>
+          <th>Cargo</th>
+          <th>Antigüedad</th>
+          <th>Hora de registro</th>
+        </tr>
+      </thead>
+      <tbody id="tabla">
+        <tr><td colspan="5">⏳ Cargando registros...</td></tr>
+      </tbody>
+    </table>
+  </main>
+
+  <footer class="footer">
+    <a class="btn btn--ghost" href="/">Volver</a>
+    <a class="btn" href="/asistencia.html">Registrar nueva asistencia</a>
+  </footer>
 
 <script>
-const $ = (s)=>document.querySelector(s);
+async function cargarAsistencia() {
+  const tbody = document.getElementById("tabla");
+  const total = document.getElementById("total");
+  tbody.innerHTML = `<tr><td colspan="5">⏳ Cargando registros...</td></tr>`;
 
-$("#load").addEventListener("click", async ()=>{
-  const pin = $("#pin").value.trim();
-  if (!pin) return alert("PIN requerido");
-  const r = await fetch(`/api/asistencia/list?pin=${encodeURIComponent(pin)}`);
-  const j = await r.json();
-  if (!j.ok) return alert(j.error || "Error");
+  try {
+    const r = await fetch("/api/asistencia.js?list");
+    const j = await r.json();
+    if (!j.ok) throw new Error(j.error || "Error cargando registros");
 
-  const items = Object.values(j.items || {}).sort((a,b)=>a.nombre.localeCompare(b.nombre));
-  $("#body").innerHTML = items.map(it => `
-    <tr>
-      <td><strong>${it.cedula}</strong></td>
-      <td>${it.nombre||"—"}</td>
-      <td>${it.cargo||"—"}</td>
-      <td>${it.antiguedad||"—"}</td>
-      <td><small>${it.hora||"—"}</small></td>
-      <td><span class="badge">Asistió</span></td>
-    </tr>
-  `).join("");
+    const items = j.items || {};
+    const keys = Object.keys(items);
 
-  $("#csv").style.display = "inline-flex";
-  $("#csv").href = `/api/asistencia/export?pin=${encodeURIComponent(pin)}`;
-});
+    total.textContent = `👥 Total registrados: ${keys.length}`;
+    if (keys.length === 0) {
+      tbody.innerHTML = `<tr><td colspan="5" style="text-align:center;">📭 Aún no hay registros</td></tr>`;
+      return;
+    }
+
+    tbody.innerHTML = keys.map(ced => {
+      const d = items[ced];
+      return `
+        <tr>
+          <td>${ced}</td>
+          <td>${d.nombre || "-"}</td>
+          <td>${d.cargo || "-"}</td>
+          <td>${d.antiguedad || "-"}</td>
+          <td>${new Date(d.hora).toLocaleString()}</td>
+        </tr>
+      `;
+    }).join("");
+  } catch (e) {
+    console.error(e);
+    tbody.innerHTML = `<tr><td colspan="5" style="color:#ffb4b4">❌ Error cargando datos</td></tr>`;
+  }
+}
+
+document.getElementById("refresh").addEventListener("click", cargarAsistencia);
+window.addEventListener("DOMContentLoaded", cargarAsistencia);
 </script>
 </body>
 </html>
