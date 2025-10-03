@@ -6,34 +6,14 @@
 <title>Lista de Asistencia</title>
 <link rel="stylesheet" href="/style.css" />
 <style>
-  .card {
-    background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
-    border: 1px solid rgba(255,255,255,.15);
-    border-radius: 16px;
-    padding: 20px;
-    max-width: 900px;
-    margin: 24px auto;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 16px;
-  }
-  th, td {
-    padding: 8px 12px;
-    border-bottom: 1px solid rgba(255,255,255,.15);
-    text-align: left;
-  }
-  th {
-    background: rgba(255,255,255,.08);
-    font-weight: bold;
-  }
+  .card { background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04)); border: 1px solid rgba(255,255,255,.15); border-radius: 16px; padding: 20px; max-width: 900px; margin: 24px auto; }
+  table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+  th, td { padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,.15); text-align: left; }
+  th { background: rgba(255,255,255,.08); }
   tr:hover { background: rgba(255,255,255,.05); }
-  .actions {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 16px;
-  }
+  .actions { display: flex; justify-content: space-between; margin-top: 16px; }
+  .delete-btn { cursor: pointer; background: none; border: none; color: #ff6b6b; font-size: 1.2rem; }
+  .delete-btn:hover { color: #ff2e2e; }
 </style>
 </head>
 <body class="layout">
@@ -46,6 +26,7 @@
     <div class="actions">
       <button id="refresh" class="btn">🔄 Actualizar lista</button>
       <a href="/api/asistencia.js?export" class="btn">📥 Descargar CSV</a>
+      <button id="clearAll" class="btn btn--danger">🧹 Borrar todos</button>
     </div>
 
     <div id="total" style="margin:12px 0;font-weight:bold;"></div>
@@ -57,25 +38,26 @@
           <th>Nombre</th>
           <th>Cargo</th>
           <th>Antigüedad</th>
-          <th>Hora de registro</th>
+          <th>Hora</th>
+          <th>Acciones</th>
         </tr>
       </thead>
       <tbody id="tabla">
-        <tr><td colspan="5">⏳ Cargando registros...</td></tr>
+        <tr><td colspan="6">⏳ Cargando registros...</td></tr>
       </tbody>
     </table>
   </main>
 
   <footer class="footer">
     <a class="btn btn--ghost" href="/">Volver</a>
-    <a class="btn" href="/asistencia.html">Registrar nueva asistencia</a>
+    <a class="btn" href="/asistencia.html">Registrar asistencia</a>
   </footer>
 
 <script>
 async function cargarAsistencia() {
   const tbody = document.getElementById("tabla");
   const total = document.getElementById("total");
-  tbody.innerHTML = `<tr><td colspan="5">⏳ Cargando registros...</td></tr>`;
+  tbody.innerHTML = `<tr><td colspan="6">⏳ Cargando registros...</td></tr>`;
 
   try {
     const r = await fetch("/api/asistencia.js?list");
@@ -84,10 +66,10 @@ async function cargarAsistencia() {
 
     const items = j.items || {};
     const keys = Object.keys(items);
-
     total.textContent = `👥 Total registrados: ${keys.length}`;
+
     if (keys.length === 0) {
-      tbody.innerHTML = `<tr><td colspan="5" style="text-align:center;">📭 Aún no hay registros</td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;">📭 Aún no hay registros</td></tr>`;
       return;
     }
 
@@ -100,14 +82,26 @@ async function cargarAsistencia() {
           <td>${d.cargo || "-"}</td>
           <td>${d.antiguedad || "-"}</td>
           <td>${new Date(d.hora).toLocaleString()}</td>
+          <td><button class="delete-btn" onclick="eliminarAsistencia('${ced}')">🗑️</button></td>
         </tr>
       `;
     }).join("");
   } catch (e) {
-    console.error(e);
-    tbody.innerHTML = `<tr><td colspan="5" style="color:#ffb4b4">❌ Error cargando datos</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="6" style="color:#ffb4b4">❌ ${e.message}</td></tr>`;
   }
 }
+
+async function eliminarAsistencia(cedula) {
+  if (!confirm(`⚠️ ¿Seguro que deseas eliminar la asistencia de ${cedula}?`)) return;
+  await fetch(`/api/asistencia.js?cedula=${cedula}`, { method: "DELETE" });
+  await cargarAsistencia();
+}
+
+document.getElementById("clearAll").addEventListener("click", async () => {
+  if (!confirm("⚠️ Esto eliminará TODOS los registros de asistencia. ¿Estás seguro?")) return;
+  await fetch("/api/asistencia.js?clear", { method: "DELETE" });
+  await cargarAsistencia();
+});
 
 document.getElementById("refresh").addEventListener("click", cargarAsistencia);
 window.addEventListener("DOMContentLoaded", cargarAsistencia);
