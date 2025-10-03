@@ -11,9 +11,42 @@
   th, td { padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,.15); text-align: left; }
   th { background: rgba(255,255,255,.08); }
   tr:hover { background: rgba(255,255,255,.05); }
-  .actions { display: flex; justify-content: space-between; margin-top: 16px; }
+  .actions { display: flex; justify-content: space-between; margin-top: 16px; flex-wrap: wrap; gap: 8px; }
   .delete-btn { cursor: pointer; background: none; border: none; color: #ff6b6b; font-size: 1.2rem; }
   .delete-btn:hover { color: #ff2e2e; }
+
+  /* ✅ Notificación */
+  .toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity .3s, transform .3s;
+    z-index: 9999;
+  }
+  .toast.show { opacity: 1; transform: translateY(0); }
+  .toast.success { background: #1db954; }
+  .toast.error { background: #ff4c4c; }
+  .toast.info { background: #007bff; }
+
+  /* 📊 Contador */
+  .counter {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 20px 0;
+    text-align: center;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(0, 75, 141, 0.15);
+    border: 1px solid rgba(0,75,141,0.4);
+  }
+  .counter span { font-size: 2rem; color: #1db954; }
 </style>
 </head>
 <body class="layout">
@@ -29,7 +62,10 @@
       <button id="clearAll" class="btn btn--danger">🧹 Borrar todos</button>
     </div>
 
-    <div id="total" style="margin:12px 0;font-weight:bold;"></div>
+    <!-- 📊 Contador dinámico -->
+    <div id="counter" class="counter">
+      👥 Total registrados: <span>0</span> personas
+    </div>
 
     <table>
       <thead>
@@ -53,10 +89,19 @@
     <a class="btn" href="/asistencia.html">Registrar asistencia</a>
   </footer>
 
+  <div id="toast" class="toast"></div>
+
 <script>
-async function cargarAsistencia() {
+function showToast(message, type = "info") {
+  const toast = document.getElementById("toast");
+  toast.className = `toast show ${type}`;
+  toast.textContent = message;
+  setTimeout(() => { toast.className = "toast"; }, 3000);
+}
+
+async function cargarAsistencia(showToastMessage = false) {
   const tbody = document.getElementById("tabla");
-  const total = document.getElementById("total");
+  const counter = document.querySelector("#counter span");
   tbody.innerHTML = `<tr><td colspan="6">⏳ Cargando registros...</td></tr>`;
 
   try {
@@ -66,7 +111,7 @@ async function cargarAsistencia() {
 
     const items = j.items || {};
     const keys = Object.keys(items);
-    total.textContent = `👥 Total registrados: ${keys.length}`;
+    counter.textContent = keys.length; // ✅ Actualiza contador en tiempo real
 
     if (keys.length === 0) {
       tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;">📭 Aún no hay registros</td></tr>`;
@@ -86,24 +131,51 @@ async function cargarAsistencia() {
         </tr>
       `;
     }).join("");
+
+    if (showToastMessage) showToast("🔄 Lista actualizada", "info");
   } catch (e) {
     tbody.innerHTML = `<tr><td colspan="6" style="color:#ffb4b4">❌ ${e.message}</td></tr>`;
+    showToast("❌ Error al cargar registros", "error");
   }
 }
 
 async function eliminarAsistencia(cedula) {
   if (!confirm(`⚠️ ¿Seguro que deseas eliminar la asistencia de ${cedula}?`)) return;
-  await fetch(`/api/asistencia.js?cedula=${cedula}`, { method: "DELETE" });
-  await cargarAsistencia();
+  try {
+    const res = await fetch(`/api/asistencia.js?cedula=${cedula}`, { method: "DELETE" });
+    const data = await res.json();
+    if (data.ok) {
+      showToast(`✅ Registro ${cedula} eliminado`, "success");
+      await cargarAsistencia();
+    } else {
+      showToast(`❌ Error eliminando registro: ${data.error}`, "error");
+    }
+  } catch (e) {
+    showToast("❌ Error al eliminar registro", "error");
+  }
 }
 
 document.getElementById("clearAll").addEventListener("click", async () => {
   if (!confirm("⚠️ Esto eliminará TODOS los registros de asistencia. ¿Estás seguro?")) return;
-  await fetch("/api/asistencia.js?clear", { method: "DELETE" });
-  await cargarAsistencia();
+  try {
+    const res = await fetch("/api/asistencia.js?clear", { method: "DELETE" });
+    const data = await res.json();
+    if (data.ok) {
+      showToast("🧹 Todos los registros fueron eliminados", "success");
+      await cargarAsistencia();
+    } else {
+      showToast(`❌ Error eliminando registros: ${data.error}`, "error");
+    }
+  } catch (e) {
+    showToast("❌ Error al eliminar todos los registros", "error");
+  }
 });
 
-document.getElementById("refresh").addEventListener("click", cargarAsistencia);
+document.getElementById("refresh").addEventListener("click", () => cargarAsistencia(true));
+
+// 🔄 Refresco automático cada 5 s
+setInterval(() => cargarAsistencia(), 5000);
+
 window.addEventListener("DOMContentLoaded", cargarAsistencia);
 </script>
 </body>
