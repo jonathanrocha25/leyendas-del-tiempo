@@ -77,7 +77,7 @@ app.get("/empleado/:cedula", (req, res) => {
   <div class="container">
     <div class="frame ${clase}">
       <div class="frame__header">
-        <h2 class="frame__title">Cada año cuenta, cada historia deja huella.</h2>
+        <h2 class="frame__title">Cada año cuenta,<br>cada historia deja huella.</h2>
       </div>
 
       <div class="photo">
