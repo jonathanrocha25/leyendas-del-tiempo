@@ -73,7 +73,7 @@ app.get("/empleado/:cedula", (req, res) => {
 <link rel="stylesheet" href="/style.css" />
 <meta name="theme-color" content="#004B8D" />
 </head>
-<body class="layout">
+<body class="layout-card">
   <div class="container">
     <div class="frame ${clase}">
       <!--<div class="frame__header">
