@@ -17,7 +17,7 @@ function csvToJson(csv) {
     if (!row.cedula) continue;
     data[row.cedula] = {
       nombre: row.nombre || "",
-      antiguedad: row.antiguedad || "",
+      antiguedad: row.cargo || "",
       reconocimiento: row.reconocimiento || ""
     };
   }
