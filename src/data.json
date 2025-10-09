@@ -1,22 +1,1307 @@
 {
-  "1075674604": {
-    "nombre": "Jonathan Rocha",
-    "antiguedad": "5 años",
-    "cargo": "Empleado del mes"
+  "3839192": {
+    "nombre": "YILMAR ADRIAN CARDONA PAYARES",
+    "antiguedad": "10",
+    "cargo": "Comprador Categoria Carnes Rojas y Cerdo"
   },
-  "1075674605": {
-    "nombre": "Juan Pérez",
-    "antiguedad": "10 años",
-    "cargo": "Trayectoria destacada"
+  "4900924": {
+    "nombre": "LEONARDO  LOSADA MENDIETA",
+    "antiguedad": "20",
+    "cargo": "Jefe De Seccion Control Perdidas"
   },
-  "1075674606": {
-    "nombre": "Daniel Prada",
-    "antiguedad": "15 años",
-    "cargo": "Reconocimiento especial"
+  "5029910": {
+    "nombre": "HERIBERTO  MENDEZ MEZA",
+    "antiguedad": "10",
+    "cargo": "Vendedor Tecnico Easy"
   },
-  "1075674607": {
-    "nombre": "Jose Flechas",
-    "antiguedad": "15 años",
-    "cargo": "Reconocimiento especial"
+  "5658621": {
+    "nombre": "FREDY ORLANDO SUAREZ LUENGAS",
+    "antiguedad": "20",
+    "cargo": "Auxiliar Centralizacion Facturas MIM"
+  },
+  "7924018": {
+    "nombre": "HECTOR HERNANDO SANCHEZ CEPEDA",
+    "antiguedad": "20",
+    "cargo": "Auxiliar Profesional Panaderia"
+  },
+  "8774570": {
+    "nombre": "ALEXANDER ALFONSO HASSELBRING HERNANDEZ",
+    "antiguedad": "10",
+    "cargo": "Jefe De Seccion No Alimentar"
+  },
+  "10180406": {
+    "nombre": "LUIS ELIECER SERNA VELEZ",
+    "antiguedad": "10",
+    "cargo": "Operador Logistico Tecnico"
+  },
+  "10296062": {
+    "nombre": "ALEX STEVEN SALINAS",
+    "antiguedad": "10",
+    "cargo": "Jefe Zonal Personas & Org. Operaciones SM"
+  },
+  "10549528": {
+    "nombre": "WILLIAM  CASTRO MUNOZ",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Control Perdidas"
+  },
+  "11185511": {
+    "nombre": "JUAN  CARLOS BARON ESPINOSA",
+    "antiguedad": "10",
+    "cargo": "Jefe De Seccion Recibo"
+  },
+  "11189320": {
+    "nombre": "ALVARO EFREN BARBOSA SUAREZ",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Domicilios"
+  },
+  "11202380": {
+    "nombre": "JORGE ENRIQUE GACHA HERNANDEZ",
+    "antiguedad": "20",
+    "cargo": "Auxiliar Pescaderia"
+  },
+  "11202400": {
+    "nombre": "JUAN PABLO CONTRERAS BOJACA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Carnes"
+  },
+  "11255072": {
+    "nombre": "ORLANDO  PALENCIA MORA",
+    "antiguedad": "20",
+    "cargo": "Auxiliar Electro"
+  },
+  "11275662": {
+    "nombre": "JOSE FERNANDO RONCANCIO BELLO",
+    "antiguedad": "20",
+    "cargo": "Jefe De Seccion Mantenimiento Tienda"
+  },
+  "14138958": {
+    "nombre": "JHON WILLIAM GRANADOS",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Estacion De Servicios (Eds)"
+  },
+  "17784367": {
+    "nombre": "FELIPE  VASQUEZ RODRIGUEZ",
+    "antiguedad": "10",
+    "cargo": "Analista Seguridad Social Personas & Org."
+  },
+  "19446932": {
+    "nombre": "JOSE ARIEL GIRALDO",
+    "antiguedad": "20",
+    "cargo": "Jefe De Seccion Carnes"
+  },
+  "20879490": {
+    "nombre": "DIANA ESPERANZA AGUILAR VELASQUEZ",
+    "antiguedad": "20",
+    "cargo": "Auxiliar Cajas"
+  },
+  "22590513": {
+    "nombre": "MARLY LUZ MARTELO DEL RIO",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Prevencion"
+  },
+  "23623912": {
+    "nombre": "ANA RUBY TORRES NIETO",
+    "antiguedad": "20",
+    "cargo": "Auxiliar Profesional Pasteleria"
+  },
+  "23846114": {
+    "nombre": "ANA LUCIA GAMBOA BOHORQUEZ",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Platos Preparados"
+  },
+  "24198635": {
+    "nombre": "FLOR JAZMIN NARANJO GARZON",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Polivalente"
+  },
+  "24198950": {
+    "nombre": "AIDA  LUZ HERRERA LOPEZ",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Platos Preparados"
+  },
+  "25497438": {
+    "nombre": "MEIBY BETZAIDA ALOMIA ARBOLEDA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Polivalente"
+  },
+  "26586398": {
+    "nombre": "FAYANY  SOTTO SANCHEZ",
+    "antiguedad": "10",
+    "cargo": "Coordinador Cajas"
+  },
+  "28797800": {
+    "nombre": "MARIANA  MARIN MONTERO",
+    "antiguedad": "20",
+    "cargo": "Jefe Control Gestion Supermercados"
+  },
+  "30855511": {
+    "nombre": "JOHANA MARIA TOBIAS OCHOA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Domicilios"
+  },
+  "33875204": {
+    "nombre": "MARIA LUCENY VIVIESCAS TORRES",
+    "antiguedad": "20",
+    "cargo": "Auxiliar No Alimentar"
+  },
+  "35196420": {
+    "nombre": "CLAUDIA MARIA SIERRA CASALLAS",
+    "antiguedad": "10",
+    "cargo": "Vendedor Easy"
+  },
+  "35415887": {
+    "nombre": "MARISOL  POVEDA BELLO",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Carnes"
+  },
+  "35418012": {
+    "nombre": "MARIA ANGELICA CARRION CASTILLO",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Frutas Verduras Y Flores"
+  },
+  "35421203": {
+    "nombre": "JOANA  SANCHEZ RODRIGUEZ",
+    "antiguedad": "20",
+    "cargo": "Coordinador Cajas"
+  },
+  "35425323": {
+    "nombre": "NANCY FARIDE CASTELLANOS SANCHEZ",
+    "antiguedad": "20",
+    "cargo": "Coordinador Cajas"
+  },
+  "35427369": {
+    "nombre": "ALICIA ALEIDA VENEGAS PULIDO",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Control Perdidas"
+  },
+  "35479791": {
+    "nombre": "ADRIANA YACQUELINE REYES MOYA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Control Perdidas"
+  },
+  "35499907": {
+    "nombre": "LUZ MERY OVIEDO MORA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Platos Preparados"
+  },
+  "38070881": {
+    "nombre": "YEIMY MILENA CABALLERO RODRIGUEZ",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Control Perdidas"
+  },
+  "38290660": {
+    "nombre": "MAYERLY  VILLABON RODAS",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Carnes"
+  },
+  "38869207": {
+    "nombre": "OLGA STELLA GIL ESGUERRA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Polivalente"
+  },
+  "39143101": {
+    "nombre": "YUSELYS YURANIS VIZCAINO OSORIO",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Electro"
+  },
+  "39622166": {
+    "nombre": "ELIZABETH  ROMERO MOLINA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Polivalente"
+  },
+  "39678073": {
+    "nombre": "DORNALY  COLLAZOS VERGARA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Control Perdidas"
+  },
+  "39797427": {
+    "nombre": "YUDY PATRICIA GUTIERREZ VELASQUEZ",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Polivalente"
+  },
+  "43586814": {
+    "nombre": "MARTHA ISABEL OROZCO RUIZ",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Control Perdidas"
+  },
+  "46380038": {
+    "nombre": "ROSA ANGELA SILVA LEAL",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Domicilios"
+  },
+  "46456691": {
+    "nombre": "NANCY MILENA REYES CEPEDA",
+    "antiguedad": "20",
+    "cargo": "Jefe De Seccion Cajas"
+  },
+  "50979217": {
+    "nombre": "TEMPORA MARIA RAMOS NERIO",
+    "antiguedad": "10",
+    "cargo": "Auxiliar No Alimentar"
+  },
+  "50979773": {
+    "nombre": "IRMA ROSA MUNOZ BELTRAN",
+    "antiguedad": "20",
+    "cargo": "Auxiliar Caja Servicio Al Cliente"
+  },
+  "51694642": {
+    "nombre": "MONICA RACHAEL ALDANA LEURO",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Polivalente"
+  },
+  "51774151": {
+    "nombre": "CRISTINA  DAVID GUZMAN",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Pasteleria"
+  },
+  "51890608": {
+    "nombre": "JACKELINE  SILVA SILVA",
+    "antiguedad": "20",
+    "cargo": "Auxiliar Polivalente"
+  },
+  "51969684": {
+    "nombre": "SONIA ESPERANZA DIAZ ALONSO",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Charcuteria"
+  },
+  "51997712": {
+    "nombre": "MARGARITA ROSA CASTILLO",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Estacion De Servicios (Eds)"
+  },
+  "52074798": {
+    "nombre": "MARIA EUGENIA REMOLINA RUIZ",
+    "antiguedad": "20",
+    "cargo": "Auxiliar Frutas Verduras Y Flores"
+  },
+  "52079460": {
+    "nombre": "MARIA JOSE MARTINEZ MORENO",
+    "antiguedad": "20",
+    "cargo": "Gerente Comercial Pescaderia Y Carnes"
+  },
+  "52083590": {
+    "nombre": "LINA SUSANA LEMAITRE SOLEIMAN",
+    "antiguedad": "10",
+    "cargo": "Gerente Procurement Y Desarrollo Inmobiliario"
+  },
+  "52100090": {
+    "nombre": "OLGA  CHINGATE ARDILA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar No Alimentar"
+  },
+  "52144246": {
+    "nombre": "OLGA MIREYA VENEGAS PULIDO",
+    "antiguedad": "10",
+    "cargo": "Supervisor Cajas"
+  },
+  "52144315": {
+    "nombre": "HOJITA VIVIALI CARO LOPERA",
+    "antiguedad": "20",
+    "cargo": "Auxiliar Polivalente"
+  },
+  "52187695": {
+    "nombre": "SANDRA BIBIANA BARRAGAN MEDINA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Pasteleria"
+  },
+  "52191761": {
+    "nombre": "DAMARIS  CORREDOR CHACÓN",
+    "antiguedad": "10",
+    "cargo": "Subadministrador Operaciones"
+  },
+  "52230645": {
+    "nombre": "RUTH FRANCEDES ORTIZ BOHORQUEZ",
+    "antiguedad": "20",
+    "cargo": "Coordinador Cajas"
+  },
+  "52232201": {
+    "nombre": "MARIA RAQUEL SEGURA VARGAS",
+    "antiguedad": "20",
+    "cargo": "Auxiliar Polivalente"
+  },
+  "52242008": {
+    "nombre": "MILDRETH MERCEDES ROBAYO DUARTE",
+    "antiguedad": "10",
+    "cargo": "Vendedor Tecnico Easy"
+  },
+  "52262226": {
+    "nombre": "ADRIANA MILENA PACHON LARA",
+    "antiguedad": "20",
+    "cargo": "Coordinador Cajas"
+  },
+  "52268800": {
+    "nombre": "GLADYS  BANDERAS GARAVITO",
+    "antiguedad": "10",
+    "cargo": "Coordinador Estacion De Servicios (Eds)"
+  },
+  "52309856": {
+    "nombre": "YORMARY  CARDENAS CASCANTE",
+    "antiguedad": "20",
+    "cargo": "Jefe De Seccion Platos Preparados"
+  },
+  "52311974": {
+    "nombre": "CAROLINA  QUIROGA VELASQUEZ",
+    "antiguedad": "20",
+    "cargo": "Coordinador Cajas"
+  },
+  "52319747": {
+    "nombre": "YENY LUCIA OCHOA VELANDIA",
+    "antiguedad": "10",
+    "cargo": "Cajero Easy"
+  },
+  "52329660": {
+    "nombre": "DENIS  BUSTOS PRIETO",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Control Perdidas"
+  },
+  "52345214": {
+    "nombre": "NANCY STELLA CUADRADO CASTILLO",
+    "antiguedad": "20",
+    "cargo": "Jefe De Seccion Estacion De Servicios (Eds)"
+  },
+  "52350769": {
+    "nombre": "OLGA  PARRA GARZON",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Caja Servicio Al Cliente"
+  },
+  "52358310": {
+    "nombre": "AURA PILAR RUIZ HERRERA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Pescaderia"
+  },
+  "52442973": {
+    "nombre": "HEIDI JOHANNA GRIJALBA ROJAS",
+    "antiguedad": "20",
+    "cargo": "Jefe De Seccion No Alimentar"
+  },
+  "52444363": {
+    "nombre": "LISA MARIA DEVIA GARCIA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Recibo Y Bodega"
+  },
+  "52505462": {
+    "nombre": "MERILYN  RAMOS SANTOS",
+    "antiguedad": "20",
+    "cargo": "Technical Lead"
+  },
+  "52521927": {
+    "nombre": "YANIRA MARISOL ZAMORA ZAMORA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Estacion De Servicios (Eds)"
+  },
+  "52525813": {
+    "nombre": "SANDRA MILENA CHITIVA MORENO",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Estacion De Servicios (Eds)"
+  },
+  "52535267": {
+    "nombre": "DORELY  LIZARAZO VALDERRAMA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Profesional Pasteleria"
+  },
+  "52539053": {
+    "nombre": "GLENIS IBETH AVILA PRADA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Control Perdidas"
+  },
+  "52539522": {
+    "nombre": "LILIANA MARIBEL MARTINEZ GUILLEN",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Control Perdidas"
+  },
+  "52589164": {
+    "nombre": "NHORA CRISTINA PARRA MORENO",
+    "antiguedad": "20",
+    "cargo": "Analista Nomina Personas & Org."
+  },
+  "52665855": {
+    "nombre": "YOLANDA  PARRA MURCIA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Profesional Pasteleria"
+  },
+  "52740722": {
+    "nombre": "ANA ODILIA ROZO CORTES",
+    "antiguedad": "20",
+    "cargo": "Coordinador Cajas"
+  },
+  "52784155": {
+    "nombre": "JEIMMY YURAY MELO CUERVO",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Polivalente"
+  },
+  "52793101": {
+    "nombre": "ADRIANA  GRANADOS MARROQUIN",
+    "antiguedad": "10",
+    "cargo": "Gerente Marketing y CX"
+  },
+  "52793338": {
+    "nombre": "NOHORA  PINEDA RUIZ",
+    "antiguedad": "20",
+    "cargo": "Profesional Dinamica Comercial"
+  },
+  "52824811": {
+    "nombre": "PRESENTACION  GALINDO CALDERON",
+    "antiguedad": "20",
+    "cargo": "Auxiliar Recibo Y Bodega"
+  },
+  "52826826": {
+    "nombre": "ANGELA DEL PILAR TORRES HERNANDEZ",
+    "antiguedad": "10",
+    "cargo": "Gerente Producto Servicios Financieros"
+  },
+  "52829058": {
+    "nombre": "ALEIDA YASMIN BERMUDEZ LEON",
+    "antiguedad": "10",
+    "cargo": "Cajero Easy"
+  },
+  "52834400": {
+    "nombre": "ZULLY ALEXANDRA GUZMAN RINCON",
+    "antiguedad": "20",
+    "cargo": "Auditor Riesgos Operativos"
+  },
+  "52842203": {
+    "nombre": "VIVIANA  RAMIREZ ARIAS",
+    "antiguedad": "20",
+    "cargo": "Auxiliar Domicilios"
+  },
+  "52856349": {
+    "nombre": "JAZMIN AMPARO ESCOBAR RIOS",
+    "antiguedad": "20",
+    "cargo": "Coordinador Control Perdidas"
+  },
+  "52872940": {
+    "nombre": "NELLITH MILENA AGUIRRE ZAPATA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Domicilios"
+  },
+  "52876947": {
+    "nombre": "CLAUDIA MARCELA MUNEVAR ROJAS",
+    "antiguedad": "20",
+    "cargo": "Tecnico Merchandising Non Food"
+  },
+  "52882316": {
+    "nombre": "CELMIRA  GUERRERO GUERRERO",
+    "antiguedad": "20",
+    "cargo": "Coordinador Cajas"
+  },
+  "52884514": {
+    "nombre": "NATALIA  GARCIA SUTACHAN",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Profesional Pasteleria"
+  },
+  "52906633": {
+    "nombre": "NINI JOHANNA LOPEZ",
+    "antiguedad": "20",
+    "cargo": "Asistente Tienda"
+  },
+  "52950222": {
+    "nombre": "ANGELA PAOLA CHAVARRO GOMEZ",
+    "antiguedad": "20",
+    "cargo": "Coordinador Administrativo Obras Y Proyectos"
+  },
+  "52957364": {
+    "nombre": "YUDY SORANYELA BONILLA BONILLA",
+    "antiguedad": "20",
+    "cargo": "Coordinador Cajas"
+  },
+  "52972411": {
+    "nombre": "JULY JARLY TORRES LEON",
+    "antiguedad": "20",
+    "cargo": "Subgerente Comercial Panaderia"
+  },
+  "52975307": {
+    "nombre": "MABEL ROCIO CRUZ CONTRERAS",
+    "antiguedad": "20",
+    "cargo": "Asistente Tienda"
+  },
+  "52985685": {
+    "nombre": "DIANA MAGALI LAGUNA PERALTA",
+    "antiguedad": "20",
+    "cargo": "Jefe De Seccion No Alimentar"
+  },
+  "52989964": {
+    "nombre": "JOHANNA  CASTIBLANCO GOMEZ",
+    "antiguedad": "20",
+    "cargo": "Supervisor Sac Front Otros Canales"
+  },
+  "52992761": {
+    "nombre": "TRINIDAD  PEREZ PRIETO",
+    "antiguedad": "20",
+    "cargo": "Analista Nomina Personas & Org."
+  },
+  "52994924": {
+    "nombre": "MARIA DEL CARMEN ESTRADA VILORIA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Control Perdidas"
+  },
+  "53015479": {
+    "nombre": "ADRIANA YAMILE MUNOZ AGUIRRE",
+    "antiguedad": "20",
+    "cargo": "Jefe De Seccion Recursos Humanos"
+  },
+  "53040363": {
+    "nombre": "SANDRA VIVIANA FLOREZ BERMEO",
+    "antiguedad": "10",
+    "cargo": "Jefe De Seccion No Alimentar"
+  },
+  "53063375": {
+    "nombre": "YANETH  CORTES BECERRA",
+    "antiguedad": "20",
+    "cargo": "Auxiliar Carnes"
+  },
+  "53074309": {
+    "nombre": "JENY CAROLINA ALBARRACIN CARDENAS",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Platos Preparados"
+  },
+  "53099500": {
+    "nombre": "ELIANA CAROLINA MURCIA ORTIZ",
+    "antiguedad": "10",
+    "cargo": "Coordinador Formacion Personas & Org."
+  },
+  "53121331": {
+    "nombre": "YEINY  GONZALEZ PERALTA",
+    "antiguedad": "10",
+    "cargo": "Asistente Personas & Org. Operacion SM"
+  },
+  "53124709": {
+    "nombre": "LUISA FERNANDA HERRERA HIGUERA",
+    "antiguedad": "10",
+    "cargo": "Jefe De Seccion Recursos Humanos"
+  },
+  "53125546": {
+    "nombre": "BRIGETH TATIANA BARON RODRIGUEZ",
+    "antiguedad": "20",
+    "cargo": "Asistente Regional"
+  },
+  "57105688": {
+    "nombre": "MORLEYDIS YISET MAURI OSPINO",
+    "antiguedad": "20",
+    "cargo": "Coordinador Cajas"
+  },
+  "59830346": {
+    "nombre": "MELBA LILY GELPUD GOMAJOA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Control Perdidas"
+  },
+  "60421843": {
+    "nombre": "OLGA GABRIELA CELIS VILLAMIZAR",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Frutas Verduras Y Flores"
+  },
+  "63356068": {
+    "nombre": "RUTH MAGALY GUARIN HERRERA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Platos Preparados"
+  },
+  "65691987": {
+    "nombre": "EUMID MERCEDES VASQUEZ IBAGON",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Platos Preparados"
+  },
+  "65717417": {
+    "nombre": "YANETH  GUZMAN SANDOVAL",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Platos Preparados"
+  },
+  "72170083": {
+    "nombre": "GUSTAVO ADOLFO ACOSTA GARCES",
+    "antiguedad": "10",
+    "cargo": "Cajero Easy"
+  },
+  "72284216": {
+    "nombre": "CESAR EMIRO SANCHEZ MARTINEZ",
+    "antiguedad": "10",
+    "cargo": "Software Engineer"
+  },
+  "78034891": {
+    "nombre": "JAIDER ANTONIO ORTEGA CORREA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Frutas Verduras Y Flores"
+  },
+  "79220293": {
+    "nombre": "FRANKY  MARTINEZ CASTRO",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Recibo Y Bodega"
+  },
+  "79324030": {
+    "nombre": "CESAR  RENGIFO RODRIGUEZ",
+    "antiguedad": "10",
+    "cargo": "Vendedor Easy"
+  },
+  "79669975": {
+    "nombre": "JORGE ALEXANDER BETANCOURT",
+    "antiguedad": "10",
+    "cargo": "Ejecutivo Desarrollador Clientes"
+  },
+  "79696187": {
+    "nombre": "JHON RODRIGO RIVERA ROJAS",
+    "antiguedad": "10",
+    "cargo": "Jefe De Seccion Gestion Polivalencia"
+  },
+  "79699618": {
+    "nombre": "JORGE ALCIDES MELO VERA",
+    "antiguedad": "10",
+    "cargo": "Product Manager Categoria Electro Menaje y Aseo"
+  },
+  "79798029": {
+    "nombre": "HENRY JULIAN MEDINA ALDANA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Control Perdidas"
+  },
+  "79798701": {
+    "nombre": "JORGE EDWIN LANDINEZ REYES",
+    "antiguedad": "20",
+    "cargo": "Auxiliar Decoracion"
+  },
+  "79800274": {
+    "nombre": "ALVARO JAVIER GUTIERREZ",
+    "antiguedad": "20",
+    "cargo": "System Engineer"
+  },
+  "79804644": {
+    "nombre": "JORGE ENRIQUE RUBIANO VARGAS",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Polivalente"
+  },
+  "79865911": {
+    "nombre": "NELSON ENRIQUE CORTES OJEDA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Domicilios"
+  },
+  "79872395": {
+    "nombre": "JOSE ALEXANDER LUNA HERNANDEZ",
+    "antiguedad": "20",
+    "cargo": "Jefe Regional Prevencion Y Control Perdidas"
+  },
+  "79897046": {
+    "nombre": "LUIS ALEJANDRO NAVARRETE BERNAL",
+    "antiguedad": "20",
+    "cargo": "Auxiliar Polivalente"
+  },
+  "79909430": {
+    "nombre": "FIDEL EDUARDO HERRERA BALLESTEROS",
+    "antiguedad": "20",
+    "cargo": "Auxiliar Frutas Verduras Y Flores"
+  },
+  "79917816": {
+    "nombre": "NESTOR CAMILO MUNOZ ROJAS",
+    "antiguedad": "20",
+    "cargo": "Gerente Tienda"
+  },
+  "79938849": {
+    "nombre": "WILLIAM  SALAZAR PENA",
+    "antiguedad": "20",
+    "cargo": "Jefe De Seccion Decoracion"
+  },
+  "79950319": {
+    "nombre": "HIRBIN ANDREY SAAVEDRA CIFUENTES",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Domicilios"
+  },
+  "79967777": {
+    "nombre": "WILSON  MESA LOZANO",
+    "antiguedad": "20",
+    "cargo": "Subgerente Perecederos"
+  },
+  "79986170": {
+    "nombre": "EDISON GIOVANNI IGLESIAS AVILA",
+    "antiguedad": "20",
+    "cargo": "Security Engineer"
+  },
+  "80008224": {
+    "nombre": "JHON MAURICIO GOMEZ SANCHEZ",
+    "antiguedad": "20",
+    "cargo": "Auxiliar Polivalente"
+  },
+  "80023541": {
+    "nombre": "MIGUEL EDUARDO URIZA URIZA",
+    "antiguedad": "20",
+    "cargo": "Coordinador Cajas"
+  },
+  "80057923": {
+    "nombre": "FABIAN  BERNAL PINEROS",
+    "antiguedad": "10",
+    "cargo": "Gerente Control Gestion Operacion Retail"
+  },
+  "80124228": {
+    "nombre": "DENNIS FABIAN RUBIANO ZIPACON",
+    "antiguedad": "20",
+    "cargo": "Jefe De Seccion Operaciones Polivalencia"
+  },
+  "80138996": {
+    "nombre": "DIEGO EDINSON TORRES SALDANA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Pls"
+  },
+  "80149223": {
+    "nombre": "WILSON ANDRES MESA RIVERA",
+    "antiguedad": "20",
+    "cargo": "Sr IT Analyst"
+  },
+  "80157388": {
+    "nombre": "SERGIO FERNANDO NUNEZ ROMERO",
+    "antiguedad": "10",
+    "cargo": "Subadministrador Operaciones"
+  },
+  "80157816": {
+    "nombre": "DIEGO ARMANDO CHARRY SANCHEZ",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Polivalente"
+  },
+  "80169199": {
+    "nombre": "LUIS ALFREDO CASTANEDA TABARES",
+    "antiguedad": "20",
+    "cargo": "Auxiliar Precios"
+  },
+  "80191864": {
+    "nombre": "DIEGO  MEDINA ORDONEZ",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Pls"
+  },
+  "80208977": {
+    "nombre": "FIRSTSON ALEXANDER RODRIGUEZ ALDANA",
+    "antiguedad": "20",
+    "cargo": "Jefe De Seccion No Alimentar"
+  },
+  "80221492": {
+    "nombre": "JULIO CESAR RUIZ PADILLA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Inventarios Centralizados"
+  },
+  "80222864": {
+    "nombre": "JEISSON EDWARD CONTRERAS CARDENAS",
+    "antiguedad": "20",
+    "cargo": "Gerente Tienda"
+  },
+  "80469620": {
+    "nombre": "CARLOS EDUARDO SANCHEZ PRIETO",
+    "antiguedad": "20",
+    "cargo": "Auxiliar Profesional Panaderia"
+  },
+  "80538567": {
+    "nombre": "WILLIAM FERNANDO LOPEZ CORREA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Inventarios Tiendas"
+  },
+  "80542304": {
+    "nombre": "EDWIN GUSTAVO RUBIANO OLIVARES",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Precios"
+  },
+  "80727757": {
+    "nombre": "JAIME ENRIQUE FONSECA LOPEZ",
+    "antiguedad": "10",
+    "cargo": "Vendedor Especialista Easy"
+  },
+  "80762632": {
+    "nombre": "JESUS GABRIEL VILLALOBOS PARRAGA",
+    "antiguedad": "20",
+    "cargo": "Profesional Formacion Personas & Org."
+  },
+  "80773060": {
+    "nombre": "JULIO CESAR LARA MANCIPE",
+    "antiguedad": "20",
+    "cargo": "Coordinador Cajas"
+  },
+  "80791271": {
+    "nombre": "RUBEN DARIO ARIAS VARGAS",
+    "antiguedad": "20",
+    "cargo": "Gerente Tienda"
+  },
+  "80796058": {
+    "nombre": "OSCAR RICARDO ULLOA VARON",
+    "antiguedad": "10",
+    "cargo": "Jefe Control Gestion Shopping Inmobiliario Y Medios Pago"
+  },
+  "80807708": {
+    "nombre": "HECTOR DARIO CIFUENTES TRUJILLO",
+    "antiguedad": "10",
+    "cargo": "Ejecutivo Comercial Venta Empresa"
+  },
+  "80812695": {
+    "nombre": "SERGIO DARIO ALVAREZ MORALES",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Pasteleria"
+  },
+  "88130641": {
+    "nombre": "JAIRO ANDRES CEPEDA OROZCO",
+    "antiguedad": "10",
+    "cargo": "Auxiliar No Alimentar"
+  },
+  "91282780": {
+    "nombre": "LUDWING OMAR CASTELLANOS ZAMBRANO",
+    "antiguedad": "20",
+    "cargo": "Manager Service"
+  },
+  "91440707": {
+    "nombre": "ALEXANDER ROOSVELT RIVERA GALEZO",
+    "antiguedad": "10",
+    "cargo": "Jefe Salud Y Seguridad En Eln  Trabajo Personas & Org."
+  },
+  "93087532": {
+    "nombre": "ORLANDO  GARZON GUZMAN",
+    "antiguedad": "20",
+    "cargo": "Auxiliar Recibo Y Bodega"
+  },
+  "1003141372": {
+    "nombre": "VICTOR MANUEL LOPEZ CONDE",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Carnes"
+  },
+  "1003522963": {
+    "nombre": "JORGE ANDRES AGUILERA LOPEZ",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Polivalente Metro Almacen"
+  },
+  "1005660570": {
+    "nombre": "FABIAN ANTONIO JARABA SOLORZANO",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Electro"
+  },
+  "1007548153": {
+    "nombre": "LUIS ALFONSO MADRIGAL DUCUARA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Control Perdidas"
+  },
+  "1010188417": {
+    "nombre": "DIANA MARISOL MALAGON MENDOZA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Control Perdidas"
+  },
+  "1010205404": {
+    "nombre": "MARIA FERNANDA PUERTO SILVA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Precios"
+  },
+  "1010209518": {
+    "nombre": "GISELLE YIRLEY LANCHEROS BENITEZ",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Domicilios"
+  },
+  "1010210802": {
+    "nombre": "CRISTIAN DAVID RAMOS OLARTE",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Inventarios Centralizados"
+  },
+  "1010217041": {
+    "nombre": "KAREN YURANY HURTADO DIAZ",
+    "antiguedad": "10",
+    "cargo": "Coordinador Abastecimiento Alimentar Pls"
+  },
+  "1012321816": {
+    "nombre": "MARTHA JULIETH BARRERA ZARATE",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Polivalente"
+  },
+  "1012367569": {
+    "nombre": "CARLOS  EDUARDO QUIROGA ROJAS",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Control Perdidas"
+  },
+  "1012401587": {
+    "nombre": "LUCY ALEJANDRA QUINTERO MIRANDA",
+    "antiguedad": "10",
+    "cargo": "Profesional Abastecimiento Importaciones"
+  },
+  "1012430509": {
+    "nombre": "CINDY TATIANA MONTANA JIMENEZ",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Platos Preparados"
+  },
+  "1013667706": {
+    "nombre": "SANDRA MILENA VARGAS SUESCUN",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Profesional Pasteleria"
+  },
+  "1014244679": {
+    "nombre": "LUIS EDUARDO ROJAS SANCHEZ",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Precios"
+  },
+  "1015419298": {
+    "nombre": "YENNY ASTRID MENDEZ MALDONADO",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Recibo Y Bodega"
+  },
+  "1015422343": {
+    "nombre": "DIEGO ANDRES ROMERO ORTIZ",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Control Perdidas"
+  },
+  "1015445609": {
+    "nombre": "JOSE FERNEY VELASQUEZ TORRES",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Profesional Panaderia"
+  },
+  "1016022103": {
+    "nombre": "ROSSY CAMILA GRANADA PARRA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar No Alimentar"
+  },
+  "1016042709": {
+    "nombre": "JESSIKA JOHANNA PATINO SEGURA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Vencidos"
+  },
+  "1018428933": {
+    "nombre": "CINDY PAOLA LIZARAZO CHACON",
+    "antiguedad": "10",
+    "cargo": "Subadministrador Operaciones"
+  },
+  "1019046548": {
+    "nombre": "ANNY MILENA VEGA PENA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Polivalente"
+  },
+  "1019060098": {
+    "nombre": "XIMENA ALEXANDRA TIBADUIZA RODRIGUEZ",
+    "antiguedad": "10",
+    "cargo": "Asistente Caja Banco"
+  },
+  "1019068180": {
+    "nombre": "DIANA ROCIO GALVIS TAFUR",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Domicilios"
+  },
+  "1019068880": {
+    "nombre": "LUZ  MYRIAM NINO SANDOVAL",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Estacion De Servicios (Eds)"
+  },
+  "1019078477": {
+    "nombre": "ZAIRA KATHERINE BARRETO MOSQUERA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Polivalente"
+  },
+  "1019084795": {
+    "nombre": "MARCOS DANIEL RODRIGUEZ VALDERRAMA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Control Perdidas"
+  },
+  "1019089437": {
+    "nombre": "YESID ANTONIO DIAZ RODRIGUEZ",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Polivalente"
+  },
+  "1019090756": {
+    "nombre": "MARIA LUISA ARNEDO DE LA OSSA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Pls"
+  },
+  "1019099928": {
+    "nombre": "YEFHERSON ALEXANDER VIATELA MARTINEZ",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Polivalente"
+  },
+  "1019109680": {
+    "nombre": "MARY CRUZ SEVERICHE VERGARA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Carnes"
+  },
+  "1020794037": {
+    "nombre": "AURA CRISTINA CASTELLANOS MARTINEZ",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Vencidos"
+  },
+  "1022367610": {
+    "nombre": "FABIAN DAVID BELTRAN TRIVINO",
+    "antiguedad": "10",
+    "cargo": "Jefe De Seccion Gestion Polivalencia"
+  },
+  "1022401866": {
+    "nombre": "JORGE ERNESTO SANCHEZ MARTINEZ",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Mantenimiento Tienda"
+  },
+  "1022980998": {
+    "nombre": "CAREN YULIET COLORADO",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Frutas Verduras Y Flores"
+  },
+  "1023865365": {
+    "nombre": "VIVIANA  CANO CUELLAR",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Polivalente"
+  },
+  "1023919636": {
+    "nombre": "HEYBERTH ALFONSO VARGAS VALBUENA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Inventarios Tiendas"
+  },
+  "1023938542": {
+    "nombre": "LUISA FERNANDA CALDERON",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Panaderia"
+  },
+  "1024463629": {
+    "nombre": "JULIE ANDREA PINEROS GARCIA",
+    "antiguedad": "20",
+    "cargo": "Supervisor Cajas"
+  },
+  "1024482320": {
+    "nombre": "INGRID CAROLINA MONROY SALAZAR",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Domicilios"
+  },
+  "1024483829": {
+    "nombre": "ANGELICA JOHANA GIL COQUIRA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Pls"
+  },
+  "1024505303": {
+    "nombre": "CAROL YASMIN GUTIERREZ ALDANA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Polivalente"
+  },
+  "1024531756": {
+    "nombre": "JHONN ESTEBAN SERRATO RODRIGUEZ",
+    "antiguedad": "10",
+    "cargo": "Operador Logistico Basico"
+  },
+  "1024552965": {
+    "nombre": "NATHALYA ANDREA MORA BRITO",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Polivalente"
+  },
+  "1024569217": {
+    "nombre": "ALEJANDRO  OSPINA ALVAREZ",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Estacion De Servicios (Eds)"
+  },
+  "1024574337": {
+    "nombre": "MARIA PAULA CANADULCE TIRADO",
+    "antiguedad": "10",
+    "cargo": "Supervisor Control Perdidas"
+  },
+  "1026553953": {
+    "nombre": "SANDRA MILENA OVIEDO MATEUS",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Hornero-Empacador"
+  },
+  "1026559394": {
+    "nombre": "ANDRES FERNANDO DIAZ HERRERA",
+    "antiguedad": "10",
+    "cargo": "Coordinador Gestion Financiera Rf"
+  },
+  "1026577533": {
+    "nombre": "EDDY SANTIAGO BARRIOS VIRGUEZ",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Control Perdidas"
+  },
+  "1030535170": {
+    "nombre": "JOHN JOAQUIN PATINO LOPEZ",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Frutas Verduras Y Flores"
+  },
+  "1030556599": {
+    "nombre": "RODRIGO  ROJAS CASTILLO",
+    "antiguedad": "10",
+    "cargo": "Profesional Producto Servicios Financieros Metro"
+  },
+  "1030559933": {
+    "nombre": "GISSETH PAOLA BUELVAS JIMENEZ",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Polivalente"
+  },
+  "1030559986": {
+    "nombre": "LUIS DANIEL GARZON SUAREZ",
+    "antiguedad": "10",
+    "cargo": "Profesional Categoria Hombre Y Mujer Exterior"
+  },
+  "1030619808": {
+    "nombre": "HECTOR ANDRES CELY ROMERO",
+    "antiguedad": "10",
+    "cargo": "Jefe De Seccion Inventarios Centralizados"
+  },
+  "1031149586": {
+    "nombre": "WENDY ALEJANDRA HERNANDEZ VALENZUELA",
+    "antiguedad": "10",
+    "cargo": "Tecnico Operativo Ventas Institucionales"
+  },
+  "1032383889": {
+    "nombre": "ADRIANA MARCELA DELGADO SAMPER",
+    "antiguedad": "10",
+    "cargo": "Supervisor Control Perdidas"
+  },
+  "1032445231": {
+    "nombre": "MARIA ALEJANDRA ALDANA BUSTOS",
+    "antiguedad": "10",
+    "cargo": "Auxiliar No Alimentar"
+  },
+  "1033712267": {
+    "nombre": "JOHAN ANDRES MEJIA MONTOYA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Charcuteria"
+  },
+  "1033727704": {
+    "nombre": "MONICA ALEXANDRA RIANO RIANO",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Frutas Verduras Y Flores"
+  },
+  "1049372942": {
+    "nombre": "DAYAN PAOLIN QUINTERO RUIZ",
+    "antiguedad": "10",
+    "cargo": "Asistente Tienda"
+  },
+  "1049797717": {
+    "nombre": "YULY ANDREA CARDENAS GUATAQUIRA",
+    "antiguedad": "10",
+    "cargo": "Jefe De Seccion Pls"
+  },
+  "1050221116": {
+    "nombre": "YOHANA LIZETH RUBIO GARCIA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Polivalente"
+  },
+  "1052399873": {
+    "nombre": "DIANA MARCELA GOMEZ CAMACHO",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Polivalente"
+  },
+  "1055228697": {
+    "nombre": "ADRIANA MARITZA SORACA SANCHEZ",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Charcuteria"
+  },
+  "1055916928": {
+    "nombre": "ANDRES  GALLEGO GUTIERREZ",
+    "antiguedad": "10",
+    "cargo": "Coordinador Control Perdidas"
+  },
+  "1056592639": {
+    "nombre": "LUZ MILA MARTINEZ CASTANEDA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar No Alimentar"
+  },
+  "1058461396": {
+    "nombre": "YENY YAZMIN CHAPARRO LOPEZ",
+    "antiguedad": "10",
+    "cargo": "Supervisor Zonal Inventarios"
+  },
+  "1063150154": {
+    "nombre": "MANUEL ANTONIO DEL TORO HERNANDEZ",
+    "antiguedad": "10",
+    "cargo": "Analista Contabilidad Gastos Generales"
+  },
+  "1063154079": {
+    "nombre": "JOENYS  DORIA DORIA",
+    "antiguedad": "10",
+    "cargo": "Vendedor Easy"
+  },
+  "1066182647": {
+    "nombre": "CARLOS JAVIER POSADA ACOSTA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Decoracion"
+  },
+  "1070958456": {
+    "nombre": "MIGUEL ANGEL TROMPA HERRERA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Polivalente Metro Almacen"
+  },
+  "1070969661": {
+    "nombre": "FABIAN  BARRERO ARIAS",
+    "antiguedad": "10",
+    "cargo": "Jefe De Seccion Operaciones Polivalencia"
+  },
+  "1071628107": {
+    "nombre": "SANDRA MILENA AVILA VARELA",
+    "antiguedad": "10",
+    "cargo": "Jefe De Seccion Cajas"
+  },
+  "1072705411": {
+    "nombre": "ERIKA YAMILE GARCIA CARRILLO",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Precios"
+  },
+  "1073242607": {
+    "nombre": "MARIA NELLY ABRIL MORENO",
+    "antiguedad": "10",
+    "cargo": "Jefe De Seccion Recursos Humanos"
+  },
+  "1073244094": {
+    "nombre": "CRISTIAN CAMILO CAICEDO AGUILERA",
+    "antiguedad": "10",
+    "cargo": "Jefe De Seccion Soft Easy"
+  },
+  "1073381127": {
+    "nombre": "ANYELY MERCEDES SUAREZ ALARCON",
+    "antiguedad": "10",
+    "cargo": "Coordinador Control Perdidas"
+  },
+  "1073505686": {
+    "nombre": "JOSE ANTONIO PARDO OCTAVIO",
+    "antiguedad": "10",
+    "cargo": "Chef Platos Preparados"
+  },
+  "1073673222": {
+    "nombre": "YUDI MARCELA MONCADA TORRES",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Polivalente"
+  },
+  "1073690911": {
+    "nombre": "ANA YULEIDY RODRIGUEZ IGUAVITA",
+    "antiguedad": "10",
+    "cargo": "Asistente Cifra De Venta"
+  },
+  "1075664640": {
+    "nombre": "LUZ DARY VELASQUEZ BALCERAS",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Polivalente"
+  },
+  "1075665460": {
+    "nombre": "LUZ ADRIANA CANO ROJAS",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Control Perdidas"
+  },
+  "1077035173": {
+    "nombre": "ASTRID LORENA GARZON GONZALEZ",
+    "antiguedad": "10",
+    "cargo": "Comprador Categoria Otc Y Faciales"
+  },
+  "1082860119": {
+    "nombre": "YADIER JOSE MOSQUERA CARRILLO",
+    "antiguedad": "10",
+    "cargo": "Supervisor Recibo"
+  },
+  "1096484535": {
+    "nombre": "WILLIAM  FANDINO QUIROGA",
+    "antiguedad": "10",
+    "cargo": "Auxiliar No Alimentar"
+  },
+  "1096953227": {
+    "nombre": "CARLOS FERNANDO VERA ORTIZ",
+    "antiguedad": "10",
+    "cargo": "Control Interno"
+  },
+  "1097990073": {
+    "nombre": "MARILU  RIVERA BARBOSA",
+    "antiguedad": "10",
+    "cargo": "Coordinador Control Perdidas"
+  },
+  "1105675000": {
+    "nombre": "KELLY JOHANNA VEGA OCAMPO",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Carnes"
+  },
+  "1106777251": {
+    "nombre": "LICED YAMILE REINOSO CARDENAS",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Caja Servicio Al Cliente"
+  },
+  "1108833695": {
+    "nombre": "YANETH  BARRAGAN NOVA",
+    "antiguedad": "10",
+    "cargo": "Coordinador Perecederos"
+  },
+  "1110175870": {
+    "nombre": "LILIANA PATRICIA LOAIZA ORTIZ",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Control Perdidas"
+  },
+  "1143350071": {
+    "nombre": "LEISMAN DAVID NAVARRO IRIARTE",
+    "antiguedad": "10",
+    "cargo": "Auxiliar Domicilios"
   }
 }
