@@ -48,6 +48,7 @@ main{
 
 .title h2 {
   font-size: 2.5rem;
+  font-weight:400;
 }
 
 .panel{
@@ -64,7 +65,7 @@ main{
 .search input{
   flex:1;
   padding:16px 14px;
-  font-size:18px;
+  font-size:1.25rem;
   border-radius:10px;
   border:1px solid rgba(255,255,255,0.25);
   background:#073261;
@@ -74,7 +75,7 @@ main{
 .search input::placeholder{color:#cfe3ffad}
 .search button{
   padding:20px 40px;
-  font-size:18px;
+  font-size:1.25rem;
   border:0;
   border-radius:10px;
   background:var(--accent);
