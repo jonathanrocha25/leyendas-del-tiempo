@@ -24,18 +24,40 @@ body.layout{
 }
 
 .header{padding:24px 16px;text-align:center}
+
+main{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+  height: 100vh;
+  padding: 20px 100px;
+}
+
 .logo{height:72px;object-fit:contain;margin-bottom:12px}
-.title{margin:0;font-size:28px;letter-spacing:0.5px}
+.title{
+  margin-top: 40%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.title h1{
+  font-size: 3.5rem;
+  text-transform: uppercase;
+}
+
+.title h2 {
+  font-size: 2.5rem;
+}
 
 .panel{
   width:100%;
-  max-width:70%;
-  margin: 70% auto;
   background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
   border:1px solid rgba(255,255,255,0.15);
   border-radius:16px;
   padding:24px;
   backdrop-filter: blur(3px);
+  margin-bottom: 40px;
 }
 
 .search{display:flex;gap:12px}
@@ -63,7 +85,21 @@ body.layout{
 .search button:active{transform:translateY(1px)}
 .hint{text-align:center;opacity:.85;font-size: 18px;}
 
-.footer{padding:16px;opacity:.8}
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer p {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.footer img {
+  margin-bottom: 20px;
+}
 
 /* ====== Vista Empleado ====== */
 .container{
