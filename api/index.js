@@ -55,7 +55,7 @@ app.get("/empleado/:cedula", (req, res) => {
     <h1 class="title">No encontramos datos para la cédula ${cedula}</h1>
   </header>
   <main class="panel">
-    <p>Verifica el número o regresa al <a href="/">buscador</a>.</p>
+    <p style="font-size: 1.5rem">Verifica el número o regresa al <a href="/">buscador</a>.</p>
   </main>
 </body>
 </html>`);
@@ -76,10 +76,10 @@ app.get("/empleado/:cedula", (req, res) => {
 <body class="layout">
   <div class="container">
     <div class="frame ${clase}">
-      <div class="frame__header">
+      <!--<div class="frame__header">
         <img src="/brand/logo-cencosud.webp" alt="Leyendas del Tiempo" class="frame__logo" />
         <h2 class="frame__title">Cargo</h2>
-      </div>
+      </div>-->
 
       <div class="photo">
         <img src="${imgUrl}" alt="Foto de ${item.nombre}" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 600%22><rect width=%22400%22 height=%22600%22 fill=%22%2300213f%22/><text x=%2220%22 y=%22320%22 fill=%22%23fff%22 font-size=%2232%22>Sin foto</text></svg>'" />
