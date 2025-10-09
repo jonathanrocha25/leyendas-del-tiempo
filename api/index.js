@@ -76,10 +76,9 @@ app.get("/empleado/:cedula", (req, res) => {
 <body class="layout-card">
   <div class="container">
     <div class="frame ${clase}">
-      <!--<div class="frame__header">
-        <img src="/brand/logo-cencosud.webp" alt="Leyendas del Tiempo" class="frame__logo" />
-        <h2 class="frame__title">Cargo</h2>
-      </div>-->
+      <div class="frame__header">
+        <h2 class="frame__title">Cada año cuenta, cada historia deja huella.</h2>
+      </div>
 
       <div class="photo">
         <img src="${imgUrl}" alt="Foto de ${item.nombre}" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 600%22><rect width=%22400%22 height=%22600%22 fill=%22%2300213f%22/><text x=%2220%22 y=%22320%22 fill=%22%23fff%22 font-size=%2232%22>Sin foto</text></svg>'" />
@@ -87,8 +86,9 @@ app.get("/empleado/:cedula", (req, res) => {
 
       <div class="info">
         <div><strong>${item.nombre}</strong></div>
-        <div>Antigüedad: ${item.antiguedad || "—"}</div>
+        <span>|</span>
         <div>${item.cargo || ""}</div>
+        <!--<div>Antigüedad: ${item.antiguedad || "—"}</div>-->
       </div>
 
       <div class="ribbon"></div>
@@ -96,10 +96,11 @@ app.get("/empleado/:cedula", (req, res) => {
 
     <div class="qr">
       <img src="/api/qr?text=${encodeURIComponent(qrTarget)}" alt="QR para abrir en tu celular" />
+      <p>Escanea el QR y obtén tu foto de recuerdo</p>
     </div>
 
     <div class="actions">
-      <a class="btn" href="${imgUrl}" download="${cedula}.webp">Descargar solo la foto</a>
+      <a class="btn" href="${imgUrl}" download="${cedula}.webp">Descargar fotografía</a>
       <a class="btn btn--ghost" href="/">Volver al buscador</a>
     </div>
   </div>
