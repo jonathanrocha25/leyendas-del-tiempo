@@ -228,6 +228,10 @@ body.layout-card {
 
   /* ====== Vista Empleado ====== */
 
+body.layout-card {
+  min-height: 100%;
+}
+
 .container{
   padding: 20px;
 }
@@ -243,5 +247,5 @@ body.layout-card {
   
 .qr {display:none;}
 
-.btn {padding:10px 20px; font-size:0.8rem;}
+.btn {padding:10px 20px; font-size:0.8rem; text-align:center;}
 }
