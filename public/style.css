@@ -22,7 +22,7 @@ body.layout{
 }
 
 body.layout-card {
-  background-image: url(/brand/fondo-tarjetas.webp) no-repeat center center fixed;
+  background: url(/brand/fondo-tarjetas.webp) no-repeat center center fixed;
   background-size: cover;
   color:var(--text);
   display:flex;
