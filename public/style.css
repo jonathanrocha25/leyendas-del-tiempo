@@ -108,7 +108,7 @@ body.layout-card {
   background-image: url(/brand/fondo-tarjetas.webp);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
   color:var(--text);
   display:flex;
   flex-direction:column;
@@ -233,10 +233,10 @@ body.layout-card {
 }
 
 .container{
-  padding: 20px;
+  padding: 15px;
 }
 
-.frame__title{font-size:1.25rem;}
+.frame__title{font-size:1.25rem; padding: 10px 0;}
 
 .info{
   font-size:0.85rem;
@@ -247,5 +247,5 @@ body.layout-card {
   
 .qr {display:none;}
 
-.btn {padding:10px 20px; font-size:0.8rem; text-align:center;}
+.btn {padding:8px 16px; font-size:0.8rem; text-align:center;}
 }
