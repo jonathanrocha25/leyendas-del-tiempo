@@ -102,53 +102,6 @@ main{
   margin-bottom: 20px;
 }
 
-@media screen and (max-width: 768px){
-  main {
-    gap: 20px;
-    padding: 20px;
-  }
-  .title{
-  margin-top: 33%;
-  margin-bottom: 20px;
-}
-
-.title h1{
-  font-size: 1.5rem;
-}
-
-.title h2 {
-  font-size: 1rem;
-}
-
-.search input {
-  padding: 10px;
-  font-size: 0.85rem;
-}
-
-.search button {
-  padding: 10px 20px;
-  font-size: 0.85rem;
-}
-
-.hint {
-  font-size: 0.8rem;
-}
-
-.panel{
-  margin-bottom: 20px;
-}
-
-.footer p {
-  font-size: 1rem;
-}
-
-.footer img {
-  max-width: 200px;
-}
-
-
-}
-
 /* ====== Vista Empleado ====== */
 
 body.layout-card {
@@ -200,6 +153,7 @@ body.layout-card {
   gap: 10px;
   font-size: 1.5rem;
   justify-content: center;
+  align-items: center;
   margin-bottom: 40px;
 }
 
@@ -226,4 +180,66 @@ body.layout-card {
   margin-bottom: 40px;
 }
 .qr img{ width:160px; height:160px; background:#fff; padding:8px}
- .qr p { padding: 20px; font-size: 2rem; max-width: 40%; margin: 0; display: flex; align-items: center; font-weight: 300;}
+.qr p { padding: 20px; font-size: 2rem; max-width: 40%; margin: 0; display: flex; align-items: center; font-weight: 300;}
+
+@media screen and (max-width: 768px){
+  main {
+    gap: 20px;
+    padding: 20px;
+  }
+  .title{
+  margin-top: 33%;
+  margin-bottom: 20px;
+}
+
+.title h1{
+  font-size: 1.5rem;
+}
+
+.title h2 {
+  font-size: 1rem;
+}
+
+.search input {
+  padding: 10px;
+  font-size: 0.85rem;
+}
+
+.search button {
+  padding: 10px 20px;
+  font-size: 0.85rem;
+}
+
+.hint {
+  font-size: 0.8rem;
+}
+
+.panel{
+  margin-bottom: 20px;
+}
+
+.footer p {
+  font-size: 1rem;
+}
+
+.footer img {
+  max-width: 200px;
+}
+
+  /* ====== Vista Empleado ====== */
+
+.container{
+  padding: 20px;
+}
+
+.frame__title{font-size:1.25rem;}
+
+.info{
+  font-size:0.85rem;
+  flex-direction: column;
+}
+
+.qr {display:none;}
+
+.btn {padding:10px 20px; font-size:0.8rem;}
+}
