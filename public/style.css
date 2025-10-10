@@ -238,10 +238,10 @@ body.layout-card {
   font-size:0.85rem;
   flex-direction: column;
 }
-
+  
+.info span {display:none}
+  
 .qr {display:none;}
-
-.qr span {display:none}
 
 .btn {padding:10px 20px; font-size:0.8rem;}
 }
