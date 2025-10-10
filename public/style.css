@@ -203,6 +203,11 @@ body.layout-card {
   padding: 20px;
 }
 
+.footer-asistencia .btn{
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+
 .title-asistenncia{
   text-align: center;
   margin-bottom: 40px;
