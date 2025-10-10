@@ -14,7 +14,7 @@ body.layout{
   background-image: url(/brand/portada-completa.webp);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
   color:var(--text);
   display:flex;
   flex-direction:column;
