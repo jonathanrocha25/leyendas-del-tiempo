@@ -13,7 +13,7 @@ html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Robo
 body.layout{
   background: url(/brand/portada-completa.webp) no-repeat center center fixed;
   background-size: cover;
-  min-height: 100dvh; /* ✅ se ajusta al alto visible real */
+  min-height: 100vh; /* ✅ se ajusta al alto visible real */
   color:var(--text);
   display:flex;
   flex-direction:column;
@@ -31,7 +31,7 @@ body.layout-card {
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  min-height:100dvh;
+  min-height:100vh;
 }
 
 body.layout-asistencia{
