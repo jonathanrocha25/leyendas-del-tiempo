@@ -20,7 +20,7 @@ body.layout{
   flex-direction:column;
   align-items:center;
   justify-content:space-between;
-  min-height:100vh;
+  min-height:110vh;
 }
 
 body.layout-asistencia{
