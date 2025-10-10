@@ -194,6 +194,11 @@ body.layout-card {
 
 /* ==== Asistencia === */
 
+.layout-asistencia .btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+
 .footer-asistencia {
   display: flex;
   flex-direction: column;
