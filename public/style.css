@@ -11,7 +11,18 @@
 *{box-sizing:border-box}
 html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;}
 body.layout{
-  background-image: url(/brand/portada-completa.webp);
+  background: url(/brand/portada-completa.webp) no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100dvh; /* ✅ se ajusta al alto visible real */
+  color:var(--text);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+}
+
+body.layout-card {
+  background-image: url(/brand/fondo-tarjetas.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,8 +30,8 @@ body.layout{
   display:flex;
   flex-direction:column;
   align-items:center;
-  justify-content:space-between;
-  min-height:100vh;
+  justify-content:center;
+  min-height:100dvh;
 }
 
 body.layout-asistencia{
@@ -113,19 +124,6 @@ main{
 }
 
 /* ====== Vista Empleado ====== */
-
-body.layout-card {
-  background-image: url(/brand/fondo-tarjetas.webp);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color:var(--text);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  min-height:100vh;
-}
 
 .container{
   width:100%;
