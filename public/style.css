@@ -23,19 +23,6 @@ body.layout{
   min-height:100vh;
 }
 
-body.layout-card {
-  background-image: url(/brand/fondo-tarjetas.webp);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color:var(--text);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:space-between;
-  min-height:100vh;
-}
-
 .header{padding:24px 16px;text-align:center}
 
 main{
@@ -163,6 +150,20 @@ main{
 }
 
 /* ====== Vista Empleado ====== */
+
+body.layout-card {
+  background-image: url(/brand/fondo-tarjetas.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color:var(--text);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+}
+
 .container{
   width:100%;
   max-width:1080px;
@@ -179,14 +180,14 @@ main{
   padding:20px 22px;
   display:flex; align-items:center; gap:16px;
 }
-.frame__logo{height:54px}
-.frame__title{margin:0; font-size:22px; font-weight:700}
+
+.frame__title{margin:0; font-size:3.5rem; font-weight:400; font-style:italic; text-align:center; padding:20px 0;}
 
 .photo{
   width:100%;
   flex:1;
   display:flex;align-items:center;justify-content:center;
-  padding:18px;
+  padding:20px;
 }
 .photo img{
   width:100%; height:100%;
@@ -194,16 +195,11 @@ main{
 }
 
 .info{
-  padding:18px 22px;
-  background:rgba(0,0,0,0.25);
-  display:grid; gap:6px;
-  font-size:18px;
-}
-.info strong{font-size:20px}
-
-.ribbon{
-  height:10px; width:100%;
-  background:var(--accent);
+  display: flex;
+  gap: 10px;
+  font-size: 1.5rem;
+  justify-content: center;
+  margin-bottom: 40px;
 }
 
 /* Colores por reconocimiento (clase aplicada por el servidor) */
@@ -223,6 +219,10 @@ main{
   background:transparent; color:#fff; border:1px solid rgba(255,255,255,.5)
 }
 .qr{
-  display:flex; justify-content:center; padding:8px 0 16px 0;
+  display: flex;
+  justify-content: center;
+  padding: 8px 0 16px 0;
+  margin-bottom: 40px;
 }
-.qr img{ width:160px; height:160px; background:#fff; padding:8px; border-radius:12px }
+.qr img{ width:160px; height:160px; background:#fff; padding:8px}
+ .qr p { padding: 20px; font-size: 2rem; max-width: 40%; margin: 0; display: flex; align-items: center; font-weight: 300;}
