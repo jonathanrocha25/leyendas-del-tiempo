@@ -179,6 +179,7 @@ body.layout-card {
 .frame__header{
   padding:20px 22px;
   display:flex; align-items:center; gap:16px;
+  justify-content:center;
 }
 
 .frame__title{margin:0; font-size:3.5rem; font-weight:400; font-style:italic; text-align:center; padding:20px 0;}
